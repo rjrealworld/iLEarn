@@ -5,9 +5,8 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to bottom right,#4F6989, #485463, #324153, #324153);
+  background-image: linear-gradient(to bottom right, #F0FCF9 0%, #FCFBF0 0%, #485463 0.01%, #4F6989 51.04%, #324153 100%, #324153 100%);
   /* background-image: linear-gradient(to bottom right,#FCFBF0, #FFECB8, #FFDC7C); */
-
 }
 
 code {
