@@ -8,8 +8,8 @@ function ToggleButton() {
             <div className="btn"> 
                 <input type="checkbox" id="checkbox" />
                 <label for="checkbox" className="label">
-                    <UilMoon className="moon" />
                     <UilSun className="sun" />
+                    <UilMoon className="moon" />
                     <div className="ball" />
                 </label>
             </div>            
