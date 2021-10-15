@@ -4,8 +4,8 @@ import './CenterBar.css';
 
 function centerBar() {
     return (
-        <div className="centerBar">
-            <img src="/assets/images/Teaching-rafiki.png" alt="teaching" className="centerImage"></img>
+        <div className="centerBar">        
+            <img src="/assets/images/Teaching-rafiki.png" alt="teaching" className="centerImage" />
             <div className="vl"></div>
             <div className="paragraph">
                 <p>Hey there!</p>

@@ -1282,6 +1282,13 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
+"@iconscout/react-unicons-solid@^0.0.3":
+  "integrity" "sha512-oApQfBntjHLvUNbXL9jObCziPJLV0KTa1vqcYE+XD4dcB7e0/CHJgRzNOoBfPNUgZ09Af5ub4Z4cz+eYJNMydw=="
+  "resolved" "https://registry.npmjs.org/@iconscout/react-unicons-solid/-/react-unicons-solid-0.0.3.tgz"
+  "version" "0.0.3"
+  dependencies:
+    "react" ">=15.0.0 <17.0.0"
+
 "@iconscout/react-unicons@^1.1.6":
   "integrity" "sha512-BnyVvBew7Vm1lvL8+qyqjchUbkVHlDyNAlN+r5b+0P0KrkQ66BHPBuJEJ2faT89L8qRu+TohE7dHMV+bndje3Q=="
   "resolved" "https://registry.npmjs.org/@iconscout/react-unicons/-/react-unicons-1.1.6.tgz"
