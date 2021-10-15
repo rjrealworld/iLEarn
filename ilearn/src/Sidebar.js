@@ -8,7 +8,7 @@ import './Sidebar.css';
 function Sidebar() {
     return (
         <div className="sidebar">
-            <img src="/assets/icon-iLEarn.png" alt="icon-iLEarn" className="sidebar-logo"/>
+            <img src="/assets/images/icon-iLEarn.png" alt="icon-iLEarn" className="sidebar-logo"/>
             <FontAwesomeIcon icon={faQuestionCircle} className="sidebar-icons" />
             <FontAwesomeIcon icon={faBookOpen} className="sidebar-icons" />
             <FontAwesomeIcon icon={faCalendarAlt} className="sidebar-icons" />
