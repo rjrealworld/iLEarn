@@ -25,11 +25,11 @@
 
 .sidebar-logo {
     height: 7%;
-    border: 5px solid var(--dark-mode-font-color);
+    border: 3px solid var(--dark-mode-font-color);
     border-radius: 20%;
 }
 
 .sidebar-icons {
     color: var(--dark-mode-font-color);
-    transform: scale(2);
+    transform: scale(1.3);
 }
