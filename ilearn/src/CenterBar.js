@@ -9,7 +9,7 @@ function centerBar() {
             <div className="vl"></div>
             <div className="paragraph">
                 <p>Hey there!</p>
-                <p>Let's begin the learning.</p>
+                <p>Let's start today's learning.</p>
             </div>
         </div>
     )
