@@ -5,10 +5,8 @@ import ToggleButton from './ToggleButton';
 function ProgressBar() {
     return (
         <div className="progressBar">
-            <div className="topProgressBar">
-                <div><ToggleButton /></div>
-                {/* <div className="credits"></div> */}
-            </div>
+            <ToggleButton />
+            {/* <div className="credits"></div> */}
             <div className="progressChart">
                 <p>Progress</p>
             </div>
