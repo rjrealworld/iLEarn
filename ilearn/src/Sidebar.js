@@ -1,20 +1,18 @@
 import React from 'react';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBookOpen, faQuestionCircle, faCalendarAlt, faCommentAlt, faRssSquare, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
-
+import { UilQuestionCircle, UilBooks, UilSchedule, UilRss, UilChat, UilSignout  } from '@iconscout/react-unicons';
 import './Sidebar.css';
 
 function Sidebar() {
     return (
         <div className="sidebar">
-            <img src="/assets/icon-iLEarn.png" alt="icon-iLEarn" className="sidebar-logo"/>
-            <FontAwesomeIcon icon={faQuestionCircle} className="sidebar-icons" />
-            <FontAwesomeIcon icon={faBookOpen} className="sidebar-icons" />
-            <FontAwesomeIcon icon={faCalendarAlt} className="sidebar-icons" />
-            <FontAwesomeIcon icon={faRssSquare} className="sidebar-icons" />
-            <FontAwesomeIcon icon={faCommentAlt} className="sidebar-icons" />
-            <FontAwesomeIcon icon={faTimesCircle} className="sidebar-icons" />
+            <img src="/assets/images/icon-iLEarn.png" alt="icon-iLEarn" className="sidebar-logo"/>
+            <UilBooks className="sidebar-icons" />
+            <UilSchedule className="sidebar-icons" />
+            <UilQuestionCircle className="sidebar-icons" />            
+            <UilRss className="sidebar-icons" />
+            <UilChat  className="sidebar-icons" />
+            <UilSignout  className="sidebar-icons" />
         </div>
     )
 }
