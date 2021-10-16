@@ -1,19 +1,16 @@
 import React from 'react';
 import './ProgressBar.css';
 import ToggleButton from './ToggleButton';
+import Progress from './Progress';
+import Recent from './Recent';
 
 function ProgressBar() {
     return (
         <div className="progressBar">
             <ToggleButton />
             {/* <div className="credits"></div> */}
-            <div className="progressChart">
-                <p>Progress</p>
-            </div>
-            
-            <div className="recent">
-                <p>Recent Activities</p>
-            </div>
+            <Progress />
+            <Recent />
         </div>
     )
 }
