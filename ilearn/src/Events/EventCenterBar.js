@@ -4,7 +4,7 @@ import './EventCenterBar.css';
 
 function EventCenterBar() {
     return (
-        <div className="centerBar">        
+        <div className="eventCenterBar">        
             <img src="/assets/images/Teaching-rafiki.png" alt="teaching" className="centerImage" />
             <div className="vl" />
             <div className="paragraph">

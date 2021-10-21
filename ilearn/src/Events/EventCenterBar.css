@@ -13,7 +13,7 @@
     --light-mode-font-color: #000;
 }
 
-.centerBar {
+.eventCenterBar {
     background: var(--dark-mode-bg-color);
     border-radius: 20px 20px;
     position:absolute;  
@@ -44,7 +44,7 @@
     top: 12px;
 }
 
-.centerBar p {
+.eventCenterBar p {
     color: var(--dark-mode-font-color);
     font-size: 30px;
 
@@ -57,11 +57,11 @@
   }
 
 @media only screen and (max-width: 768px) {
-    .centerBar  {
+    .eventCenterBar  {
       left: 99px;
     }
 
-    .centerBar p {
+    .eventCenterBar p {
         font-size: 22px;
     }
 
@@ -72,12 +72,12 @@
 }
 
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1439px) {
-    .centerBar  {
+    .eventCenterBar  {
       left: 15%;
       height: 154px;
     }
 
-    .centerBar p {
+    .eventCenterBar p {
         font-size: 25px;
     }
 
@@ -88,12 +88,12 @@
 }
 
 @media only screen and (min-device-width: 2560px) {
-      .centerBar  {
+      .eventCenterBar  {
         left: 15.5%;
         height: 18%;
       }
 
-      .centerBar p {
+      .eventCenterBar p {
           font-size: 50px;
       }
 
