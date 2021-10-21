@@ -1,5 +1,5 @@
 import Sidebar from "./Sidebar";
-import ProgressBar from "./ProgressBar";
+import ProgressBar from "./RightBar/ProgressBar";
 import CenterBar from "./CenterBar";
 import './App.css';
 
@@ -9,6 +9,7 @@ function App() {
       <Sidebar />
       <CenterBar />
       <ProgressBar />
+      {/* <Event></Event> */}
     </div>
   );
 }

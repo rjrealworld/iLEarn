@@ -13,15 +13,14 @@
     --light-mode-font-color: #000;
 }
 
-.progress {
-    height: 50%;
-    width: 90%;
+.recent {
+    height: 40%;
+    width: 93%;
     background-color: var(--dark-mode-icon-color);
     border-radius: 20px 20px;
-    /* padding-left: 7px; */
 }
 
-.progress p {
+.recent p {
     color: var(--dark-mode-font-color);
     font-size:18px;
     font-weight: 700;
@@ -32,26 +31,14 @@
 }
 
 @media only screen and (max-width: 1024px) {
-    .progress {
-        height: 51%;
-    }
-    .progress p {
-        font-size: 16px;
-        letter-spacing: 2px;
-        padding: 15px;
-        padding-left: 17px;
+    .recent {
+        height: 38%;
     }    
 }
 
 @media only screen and (min-width: 2560px) {
-    .progress {
-        height: 55%;
+    .recent {
+        height: 35%;
         margin-left: 17px;
-    }
-    .progress p {
-        font-size: 42px;
-        letter-spacing: 5px;
-        padding: 25px;
-        padding-left: 30px;
     }
 }
