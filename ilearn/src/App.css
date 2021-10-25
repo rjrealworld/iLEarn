@@ -1,0 +1,20 @@
+/*:root {
+    --dark-mode-bg-color: #1E212D;
+    --dark-mode-font-color: #1bf0cc;
+    --dark-mode-icon-color: #43485B;
+    --dark-mode-icon-color-hover: #1bf0cc;
+    --box-shadow-color: #1E212D;
+    --light-mode-bg-color: #F6E7BE;
+    --light-mode-font-color: #000;
+}
+*/
+
+:root {
+    --dark-mode-bg-color: #1E212D;
+    --dark-mode-font-color: #FFC478;
+    --dark-mode-icon-color: #43485B;
+    --dark-mode-icon-color-hover: #FFC478;
+    --box-shadow-color: rgba(0, 0, 0, 0.493);
+    --light-mode-bg-color: #FFF3D2;
+    --light-mode-font-color: #000;
+}
