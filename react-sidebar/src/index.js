@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-// import App from "./App";
-// import App from "./signUp/App";
-import App from "./signIn/App";
+//import App from "./DashBoard/App";
+ import App from "./signUp/App";
+//import App from "./signIn/App";
 
 // import App from "./DashBoard/App";
 import { BrowserRouter } from "react-router-dom";
