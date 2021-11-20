@@ -10,6 +10,7 @@ const Sidebar = () => {
   const confirmPasswordRef = useRef();
 
   return (
+
     <div className="Container">
       <div className="LogoWrapper">
         <img src={logo} alt="" />
@@ -33,8 +34,7 @@ const Sidebar = () => {
           Already have an account ? <span> Sign In </span>{" "}
         </h4>{" "}
       </div>{" "}
-    </div>
+      </div>
   );
 };
-
 export default Sidebar;
