@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useReducer, useRef, useState } from "react";
 import {Alert} from 'react-bootstrap';
 import logo from "../assets/logo.svg";
 import Input from "./Input";
@@ -7,6 +7,7 @@ import AuthProvider, { useAuth } from "./contexts/AuthContext";
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
+  const emailStatus = useRef(false);
   const nameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -30,6 +31,7 @@ const Sidebar = () => {
   //   }
   //   setLoading(false);
   // }
+
   return (
     // <AuthProvider>
       <div className="Container">
@@ -43,13 +45,14 @@ const Sidebar = () => {
       <form className="Form">
         <h3> Sign Up </h3> 
         {/* {error && <Alert variant="danger">{error}</Alert>} */}
-        <Input placeholder="Full Name" ref={nameRef} />
-        <Input type="email" id="email" placeholder="Email" ref={emailRef} />
-        <Input type="password" placeholder="Password" ref={passwordRef} />
+        <Input placeholder="Full Name" ref={nameRef} stat={false}/>
+        <Input type="email" id="email" placeholder="Email" ref={emailRef} stat={emailStatus}/>
+        <Input type="password" placeholder="Password" ref={passwordRef} stat={false}/>
         <Input
           type="password"
           placeholder="Confrim Password"
           ref={confirmPasswordRef}
+          stat={false}
         />
         {/* <button disabled={loading}> Sign Up </button> */}
         <button> Sign Up </button>
