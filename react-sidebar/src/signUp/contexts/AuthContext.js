@@ -14,20 +14,24 @@ export default function AuthProvider({ children }) {
     }
 
     useEffect(() => {
+        console.log('h');
         const unsubscribe = auth.onAuthStateChanged(user => {
             if (user) {
+                console.log('user logged in', user);
                 setCurrentUser(user);
             } else {
+                console.log('user not logged in');
                 setCurrentUser(null);
             }
         });
-        return unsubscribe;
+        return () => unsubscribe();
     }, [])
 
     
 
     const value = {
-        currentUser
+        currentUser, 
+        signUp
     }
 
     return (

@@ -3,7 +3,7 @@ import {Alert} from 'react-bootstrap';
 import logo from "../assets/logo.svg";
 import Input from "./Input";
 import "./Sidebar.css";
-import { useAuth } from "./contexts/AuthContext";
+import AuthProvider, { useAuth } from "./contexts/AuthContext";
 
 const Sidebar = () => {
   const nameRef = useRef();
@@ -30,7 +30,8 @@ const Sidebar = () => {
     setLoading(false);
   }
   return (
-    <div className="Container">
+    <AuthProvider>
+      <div className="Container">
       <div className="LogoWrapper">
         <img src={logo} alt="" />
         <h3>
@@ -56,6 +57,7 @@ const Sidebar = () => {
         </h4>
       </div>
     </div>
+    </AuthProvider>
   );
 };
 export default Sidebar;
