@@ -1,11 +1,10 @@
 import React from "react";
 import Sidebar from "./Sidebar";
-import "./App.css";
-import AuthProvider from "./contexts/AuthContext";
+import "./SignUp.css";
+
 
 const SignUp = () => {
   return (
-    // <AuthProvider>
     <div className="ContainerApp">
       <div className="AppWrapper">
         <div className="ContainerBg">
@@ -17,7 +16,6 @@ const SignUp = () => {
         <Sidebar />
       </div>
     </div>
-    // </AuthProvider>
   );
 };
 

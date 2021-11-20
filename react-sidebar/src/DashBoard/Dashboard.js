@@ -1,4 +1,4 @@
-import { Route, Switch, useLocation } from "react-router";
+import { Route, Switch, useLocation } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Home from "./Pages/Home";
 import Team from "./Pages/Team";
@@ -23,7 +23,7 @@ const Pages = styled.div`
   }
 `;
 
-function App() {
+function Dashboard() {
   const location = useLocation();
   return (
     <>
@@ -43,4 +43,4 @@ function App() {
   );
 }
 
-export default App;
+export default Dashboard;

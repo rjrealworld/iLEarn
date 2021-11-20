@@ -1,19 +1,20 @@
 import React from "react";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { AuthProvider } from "./contexts/AuthContext";
 import SignUp from "./signUp/SignUp";
 import SignIn from "./signIn/SignIn";
-import AuthProvider from "./signUp/contexts/AuthContext";
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import Dashboard from "./DashBoard/Dashboard";
 
 const App = () => {
   return (
     <Router>
-      {/* <AuthProvider> */}
-      <Switch>
-        <Route path="/signUp" exact component={SignUp} />
-        <Route path="/signIn" exact component={SignIn} />
-        <Route path="/" component={SignIn} />
-      </Switch>
-      {/* </AuthProvider> */}
+      <AuthProvider>
+        <Switch>
+          <Route path="/" exact component={Dashboard} />
+          <Route path="/signIn" component={SignIn} />
+          <Route path="/signUp" component={SignUp} />
+        </Switch>
+      </AuthProvider>
     </Router>
   );
 };
