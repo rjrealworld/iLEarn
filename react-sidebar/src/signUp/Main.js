@@ -1,33 +1,15 @@
 import React from "react";
-import styled from "styled-components";
+import "./Main.css";
 
 const Main = () => {
   return (
-    <Container>
+    <div className="ContainerBg">
       <h1>
         Join The <br />
         Community
       </h1>
-    </Container>
+    </div>
   );
 };
-
-const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  h1 {
-    font-size: 65px;
-    font-weight: 900;
-    color: #343434;
-
-    @media (max-width: 900px) {
-      display: none;
-    }
-  }
-`;
 
 export default Main;
