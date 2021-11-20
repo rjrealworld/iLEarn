@@ -4,7 +4,7 @@ import bgImg from "../assets/bg.png";
 import Sidebar from "./Sidebar";
 import Main from "./Main";
 
-const App = () => {
+const SignIn = () => {
   return (
     <Container>
       <Wrapper>
@@ -34,4 +34,4 @@ const Wrapper = styled.div`
   display: flex;
 `;
 
-export default App;
+export default SignIn;

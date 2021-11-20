@@ -1,21 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-// import App from "./App";
-import App from "./signUp/App";
-// import App from "./signIn/App";
-
-// import App from "./DashBoard/App";
-import { BrowserRouter } from "react-router-dom";
+import App from "./App";
+// import { BrowserRouter } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
+// import AuthProvider from "./signUp/contexts/AuthContext";
 
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    {/* <AuthProvider> */}
+    <App />
+    {/* </AuthProvider> */}
   </React.StrictMode>,
   document.getElementById("root")
 );

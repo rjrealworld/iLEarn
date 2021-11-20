@@ -4,33 +4,34 @@ import logo from "../assets/logo.svg";
 import Input from "./Input";
 import "./Sidebar.css";
 import AuthProvider, { useAuth } from "./contexts/AuthContext";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const nameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
   const confirmPasswordRef = useRef();
-  const {signUp} = useAuth();
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
+  // const {signUp} = useAuth();
+  // const [error, setError] = useState('');
+  // const [loading, setLoading] = useState(false);
 
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    if (passwordRef.current.value !== confirmPasswordRef.current.value) {
-      return setError('Passwords do not match');
-    }
-    try {
-      setError('');
-      setLoading(true);
-      await signUp(emailRef.current.value, passwordRef.current.value);
-    } catch {
-      setError('Failed to create an account');
-    }
-    setLoading(false);
-  }
+  // async function handleSubmit(e) {
+  //   e.preventDefault();
+  //   if (passwordRef.current.value !== confirmPasswordRef.current.value) {
+  //     return setError('Passwords do not match');
+  //   }
+  //   try {
+  //     setError('');
+  //     setLoading(true);
+  //     await signUp(emailRef.current.value, passwordRef.current.value);
+  //   } catch {
+  //     setError('Failed to create an account');
+  //   }
+  //   setLoading(false);
+  // }
   return (
-    <AuthProvider>
+    // <AuthProvider>
       <div className="Container">
       <div className="LogoWrapper">
         <img src={logo} alt="" />
@@ -38,9 +39,10 @@ const Sidebar = () => {
           i <span> LE </span>arn
         </h3>
       </div>
-      <form className="Form" onSubmit={handleSubmit}>
+      {/* <form className="Form" onSubmit={handleSubmit}> */}
+      <form className="Form">
         <h3> Sign Up </h3> 
-        {error && <Alert variant="danger">{error}</Alert>}
+        {/* {error && <Alert variant="danger">{error}</Alert>} */}
         <Input placeholder="Full Name" ref={nameRef} />
         <Input type="email" id="email" placeholder="Email" ref={emailRef} />
         <Input type="password" placeholder="Password" ref={passwordRef} />
@@ -49,15 +51,16 @@ const Sidebar = () => {
           placeholder="Confrim Password"
           ref={confirmPasswordRef}
         />
-        <button disabled={loading}> Sign Up </button>
+        {/* <button disabled={loading}> Sign Up </button> */}
+        <button> Sign Up </button>
       </form>
       <div>
         <h4>
-          Already have an account ? <span> Sign In </span>
+          Already have an account ? <Link to='/signIn'><span>Sign In</span></Link>
         </h4>
       </div>
     </div>
-    </AuthProvider>
+    // </AuthProvider>
   );
 };
 export default Sidebar;
