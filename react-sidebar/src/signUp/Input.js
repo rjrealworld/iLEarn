@@ -1,7 +1,7 @@
 import React from "react";
 import "./Input.css";
 
-const Input = ({ type, placeholder, reference, stat }) => {
+const Input = ({ type, placeholder, ref, setFunc }) => {
   // const myStyle = {
   //   background: 'yellow'
   // };
@@ -12,19 +12,25 @@ const Input = ({ type, placeholder, reference, stat }) => {
   //   } else {
   //     console.log("true");
   //   }
+
+  function handleChange(e) {
+    setFunc(e.target.value);
+  }
+
   return (
     <div className="ContainerInput">
       <input
         className="StyledInput"
         placeholder={placeholder && placeholder}
         type={type ? type : "text"}
+        value={ref}
         required
-        autocomplete="off"
+        onChange={handleChange}
       />
       <div
         className="Status"
         // id="status"
-        ref={reference}
+        // ref={reference}
         required
       />
     </div>

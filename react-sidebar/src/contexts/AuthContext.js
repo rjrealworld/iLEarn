@@ -1,22 +1,22 @@
 import React, {useContext, useState, useEffect} from "react";
 import { auth } from '../firebase';
-import {onAuthStateChanged} from 'firebase/auth';
+import {onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth';
 
 const AuthContext = React.createContext();
 
-export function useAuth() {
-    return useContext(AuthContext);
-}
+export const useAuth = () => useContext(AuthContext);
+
 export function AuthProvider({ children }) {
-    const [currentUser, setCurrentUser] = useState();
+    const [currentUser, setCurrentUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');
 
     function signUp (email, password) {
-        return auth.createUserWithEmailAndPassword(email, password);
+        return createUserWithEmailAndPassword(auth, email, password)
     }
 
     function signIn (email, password) {
-        return auth.signInWithEmailAndPassword(email, password);
+        return signInWithEmailAndPassword(auth, email, password);
     }
 
     useEffect(() => {
@@ -24,15 +24,15 @@ export function AuthProvider({ children }) {
             if (user) {
                 console.log('user logged in', user);
                 setCurrentUser(user);
-                setLoading(false);
             } else {
                 console.log('user not logged in');
                 setCurrentUser(null);
             }
+            setLoading(false);
         });
 
         return unsubscribe;
-    }, [])
+    }, [currentUser])
 
     const value = {
         currentUser, 

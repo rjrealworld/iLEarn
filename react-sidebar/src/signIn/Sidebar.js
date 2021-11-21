@@ -22,6 +22,7 @@ const Sidebar = () => {
       setError('');
       setLoading(true);
       await signIn(emailRef.current.value, passwordRef.current.value);
+      console.log("Sign in successful");
       history.push("/");
     } catch {
       setError('Failed to Login');
@@ -37,10 +38,10 @@ const Sidebar = () => {
             i <span> LE </span>arn
           </h3>
         </div>
-        <form className="Form" onSubmit={handleSubmit}>
+        <form className="Form">
           <h3> Sign In </h3> <Input type="email" placeholder="Email" />
           <Input type="password" placeholder="Password" />
-          <button type="submit" disabled={loading}> Sign In </button>
+          <button onClick={handleSubmit}> Sign In </button>
         </form>
         <div>
           <h4>
