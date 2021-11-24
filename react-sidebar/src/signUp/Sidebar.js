@@ -19,11 +19,12 @@ const Sidebar = () => {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    console.log("Inside handleSubmit", currentUser);
-
     if (password !== confirmPassword) {
       setError('Passwords do not match');
+      history.push('/signup');
+      return;
     }
+
     try {
       setError('');
       setLoading(true);
@@ -42,7 +43,7 @@ const Sidebar = () => {
       <div className="LogoWrapper">
         <img src={logo} alt="" />
         <h3>
-          i <span> LE </span>arn
+          i<span>LE</span>arn
         </h3>
       </div>
       <form className="Form" onSubmit={handleSubmit}>
@@ -112,8 +113,8 @@ const Sidebar = () => {
       </form>
       <div>
         <h4>
-          Already have an account ?{" "}
-          <Link to="/">
+          Already have an account ?
+          <Link id="form-link" to="/">
             <span>Sign In</span>
           </Link>
         </h4>

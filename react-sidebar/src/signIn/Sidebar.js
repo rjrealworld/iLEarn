@@ -51,11 +51,12 @@ const Sidebar = () => {
         <div className="LogoWrapper">
           <img src={logo} alt="" />
           <h3>
-            i <span> LE </span>arn
+            i<span>LE</span>arn
           </h3>
         </div>
         <form className="Form">
           <h3> Sign In </h3>{" "}
+          {error && <p className="error">{error}</p>}
           <div className="ContainerInput">
             <input
               className="StyledInput"
@@ -64,12 +65,7 @@ const Sidebar = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <div
-              className="Status"
-              // id="status"
-              // ref={reference}
-              required
-            />
+            
           </div>
           <div className="ContainerInput">
             <input
@@ -79,23 +75,22 @@ const Sidebar = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <div
-              className="Status"
-              // id="status"
-              // ref={reference}
-              required
-            />
+            
           </div>
           <button onClick={handleSubmit}> Sign In </button>
-          <button className="google-btn" onClick={handleGoogleSignIn}>
-            {" "}
-            Sign In With Google{" "}
+          <button id="google-btn" onClick={handleGoogleSignIn}>
+            Sign In with{" "}
+            <img
+              src="https://img.icons8.com/fluency/50/000000/google-logo.png"
+              className="google-icon"
+              alt="google-icon"
+            />
           </button>
         </form>
-        <div>
+        <div className="footer">
           <h4>
-            Don 't have an account?{" "}
-            <Link to="/signUp">
+            Don't have an account?
+            <Link id="form-link" to="/signUp">
               <span>Sign Up</span>
             </Link>
           </h4>
