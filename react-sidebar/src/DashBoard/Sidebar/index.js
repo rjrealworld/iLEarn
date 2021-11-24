@@ -10,6 +10,7 @@ import Documents from "../../assets/draft.svg";
 import PowerOff from "../../assets/power-off-solid.svg";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
 
 const Container = styled.div`
   position: fixed;
@@ -225,6 +226,9 @@ const Sidebar = () => {
   const [profileClick, setprofileClick] = useState(false);
   const handleProfileClick = () => setprofileClick(!profileClick);
 
+  const {currentUser, logOut} = useAuth();
+  console.log(currentUser.email);
+
   return (
     <Container>
       <Button clicked={click} onClick={() => handleClick()}>
@@ -260,7 +264,7 @@ const Sidebar = () => {
             <img src={Team} alt="Feeds" />
             <Text clicked={click}>Feeds</Text>
           </Item>
-         
+
           <Item
             onClick={() => setClick(false)}
             activeClassName="active"
@@ -287,12 +291,12 @@ const Sidebar = () => {
           />
           <Details clicked={profileClick}>
             <Name>
-              <h4>Jhon&nbsp;Doe</h4>
+              <h4>{currentUser.displayName}</h4>
               <a href="/#">view&nbsp;profile</a>
             </Name>
 
             <Logout>
-              <img src={PowerOff} alt="logout" />
+              <img src={PowerOff} onClick={logOut} alt="logout" />
             </Logout>
           </Details>
         </Profile>

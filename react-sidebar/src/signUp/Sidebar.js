@@ -3,7 +3,7 @@ import {Alert} from 'react-bootstrap';
 import logo from "../assets/logo.svg";
 // import Input from "./Input";
 import "./Sidebar.css";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
 const Sidebar = () => {
@@ -11,15 +11,15 @@ const Sidebar = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
-  const {signUp} = useAuth();
+  const {signUp, currentUser, updateProf, history} = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const history = useHistory();
+  // const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    console.log("Inside handleSubmit");
+    console.log("Inside handleSubmit", currentUser);
 
     if (password !== confirmPassword) {
       setError('Passwords do not match');
@@ -28,8 +28,9 @@ const Sidebar = () => {
       setError('');
       setLoading(true);
       await signUp(email, password);
+      updateProf(name);
       console.log("Sign up successful");
-      history.push("/");
+      history.push("/dashboard");
     } catch {
       setError('Failed to create an account');
     }
