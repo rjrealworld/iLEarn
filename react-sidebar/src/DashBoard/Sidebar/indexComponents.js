@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Container = styled.div`
   position: fixed;
@@ -95,7 +95,7 @@ const SlickBar = styled.ul`
   border-radius: 0 30px 30px 0;
 `;
 
-const Item = styled(Link)`
+const Item = styled(NavLink)`
   text-decoration: none;
   color: var(--white);
   width: 100%;

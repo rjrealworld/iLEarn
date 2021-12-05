@@ -1,4 +1,4 @@
-import { Route, Switch, useLocation } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Sidebar from "./Sidebar/index";
 import Home from "./Pages/Home";
 import Team from "./Pages/Team";
@@ -24,13 +24,12 @@ const Pages = styled.div`
 `;
 
 function Dashboard() {
-  const location = useLocation();
   return (
     <>
       <Sidebar />
       <Pages>
         <AnimatePresence exitBeforeEnter>
-          <Switch location={location} key={location.pathname}>
+          <Switch>
             <Route exact path="/dashboard/" component={Home} />
             <Route path="/dashboard/teams" component={Team} />
             <Route path="/dashboard/calender" component={Calender} />

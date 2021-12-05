@@ -40,6 +40,7 @@ const Sidebar = () => {
             <img src={Grid} alt="Dashboard" />
             <Text clicked={click}>Dashboard</Text>
           </Item>
+          
           <Item
             onClick={() => setClick(false)}
             activeClassName="active"
@@ -48,6 +49,7 @@ const Sidebar = () => {
             <img src={Calender} alt="Events" />
             <Text clicked={click}>Events</Text>
           </Item>
+          
           <Item
             onClick={() => setClick(false)}
             activeClassName="active"
