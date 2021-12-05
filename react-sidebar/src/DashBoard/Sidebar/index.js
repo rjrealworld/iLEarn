@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {Container, Button, SidebarContainer, Logo, SlickBar, Item, Text, Profile, Details, Name, Logout} from './indexComponents';
+
 //All the svg files
 import logo from "../../assets/logo.svg";
 import Grid from "../../assets/grid.svg";
@@ -19,7 +20,6 @@ const Sidebar = () => {
   const handleProfileClick = () => setprofileClick(!profileClick);
 
   const {currentUser, logOut} = useAuth();
-  // console.log(currentUser.email);
 
   return (
     <Container>
@@ -35,7 +35,7 @@ const Sidebar = () => {
             onClick={() => setClick(false)}
             exact
             activeClassName="active"
-            to="/dashboard"
+            to="/dashboard/"
           >
             <img src={Grid} alt="Dashboard" />
             <Text clicked={click}>Dashboard</Text>
@@ -43,7 +43,7 @@ const Sidebar = () => {
           <Item
             onClick={() => setClick(false)}
             activeClassName="active"
-            to="/calender"
+            to="/dashboard/calender"
           >
             <img src={Calender} alt="Events" />
             <Text clicked={click}>Events</Text>
@@ -51,7 +51,7 @@ const Sidebar = () => {
           <Item
             onClick={() => setClick(false)}
             activeClassName="active"
-            to="/team"
+            to="/dashboard/teams"
           >
             <img src={TeamImg} alt="Teams" />
             <Text clicked={click}>Teams</Text>
@@ -60,7 +60,7 @@ const Sidebar = () => {
           <Item
             onClick={() => setClick(false)}
             activeClassName="active"
-            to="/documents"
+            to="/dashboard/documents"
           >
             <img src={Documents} alt="Books" />
             <Text clicked={click}>Books</Text>
@@ -68,7 +68,7 @@ const Sidebar = () => {
           <Item
             onClick={() => setClick(false)}
             activeClassName="active"
-            to="/projects"
+            to="/dashboard/projects"
           >
             <img src={Chat} alt="Chat" />
             <Text clicked={click}>Chat</Text>

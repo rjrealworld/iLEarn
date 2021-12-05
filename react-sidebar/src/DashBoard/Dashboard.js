@@ -1,5 +1,5 @@
 import { Route, Switch, useLocation } from "react-router-dom";
-import Sidebar from "./Sidebar";
+import Sidebar from "./Sidebar/index";
 import Home from "./Pages/Home";
 import Team from "./Pages/Team";
 import Calender from "./Pages/Calender";
@@ -31,11 +31,11 @@ function Dashboard() {
       <Pages>
         <AnimatePresence exitBeforeEnter>
           <Switch location={location} key={location.pathname}>
-            <Route exact path="/" component={Home} />
-            <Route path="/team" component={Team} />
-            <Route path="/calender" component={Calender} />
-            <Route path="/documents" component={Documents} />
-            <Route path="/projects" component={Projects} />
+            <Route exact path="/dashboard/" component={Home} />
+            <Route path="/dashboard/teams" component={Team} />
+            <Route path="/dashboard/calender" component={Calender} />
+            <Route path="/dashboard/documents" component={Documents} />
+            <Route path="/dashboard/projects" component={Projects} />
           </Switch>
         </AnimatePresence>
       </Pages>
