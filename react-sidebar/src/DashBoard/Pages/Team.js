@@ -1,7 +1,10 @@
+import React from "react";
 import MotionHoc from "./MotionHoc";
 
 const TeamComponent = () => {
-  return <h1>Team</h1>;
+  return (
+    <h1>Team</h1>
+    );
 };
 
 const Team = MotionHoc(TeamComponent);

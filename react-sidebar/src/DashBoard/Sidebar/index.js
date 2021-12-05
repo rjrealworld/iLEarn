@@ -3,13 +3,13 @@ import React, { useState } from "react";
 //All the svg files
 import logo from "../../assets/logo.svg";
 import Grid from "../../assets/grid.svg";
-import Team from "../../assets/social.svg";
+import TeamImg from "../../assets/social.svg";
 import Calender from "../../assets/sceduled.svg";
 import Chat from "../../assets/message-circle.svg";
 import Documents from "../../assets/draft.svg";
 import PowerOff from "../../assets/power-off-solid.svg";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 
 const Container = styled.div`
@@ -105,7 +105,7 @@ const SlickBar = styled.ul`
   border-radius: 0 30px 30px 0;
 `;
 
-const Item = styled(NavLink)`
+const Item = styled(Link)`
   text-decoration: none;
   color: var(--white);
   width: 100%;
@@ -227,7 +227,7 @@ const Sidebar = () => {
   const handleProfileClick = () => setprofileClick(!profileClick);
 
   const {currentUser, logOut} = useAuth();
-  console.log(currentUser.email);
+  // console.log(currentUser.email);
 
   return (
     <Container>
@@ -243,7 +243,7 @@ const Sidebar = () => {
             onClick={() => setClick(false)}
             exact
             activeClassName="active"
-            to="/"
+            to="/dashboard"
           >
             <img src={Grid} alt="Dashboard" />
             <Text clicked={click}>Dashboard</Text>
@@ -261,8 +261,8 @@ const Sidebar = () => {
             activeClassName="active"
             to="/team"
           >
-            <img src={Team} alt="Feeds" />
-            <Text clicked={click}>Feeds</Text>
+            <img src={TeamImg} alt="Teams" />
+            <Text clicked={click}>Teams</Text>
           </Item>
 
           <Item
