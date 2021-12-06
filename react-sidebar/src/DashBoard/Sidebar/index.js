@@ -86,7 +86,7 @@ const Sidebar = () => {
           <Details clicked={profileClick}>
             <Name>
               <h4>{currentUser.displayName}</h4>
-              <a href="/#">view&nbsp;profile</a>
+              <a>view&nbsp;profile</a>
             </Name>
 
             <Logout>
