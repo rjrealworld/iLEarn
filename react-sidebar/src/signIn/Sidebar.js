@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import logo from "../assets/logo.svg";
-import Input from "./Input";
 import "../signUp/Sidebar.css";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
