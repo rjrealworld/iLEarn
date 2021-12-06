@@ -7,7 +7,7 @@ import Recent from './Recent';
 function ProgressBar() {
     return (
         <div className="progressBar">
-            <ToggleButton />
+            {/* <ToggleButton /> */}
             {/* <div className="credits"></div> */}
             <Progress />
             <Recent />
