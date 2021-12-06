@@ -130,7 +130,7 @@ const Text = styled.span`
 `;
 
 const Profile = styled.div`
-  width: ${(props) => (props.clicked ? "14rem" : "3rem")};
+  width: ${(props) => (props.clicked ? "16rem" : "3rem")};
   height: 3rem;
 
   padding: 0.5rem 1rem;
@@ -168,14 +168,18 @@ const Details = styled.div`
 
 const Name = styled.div`
   padding: 0 1.5rem;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   h4 {
-    display: inline-block;
+    display: inline;
+    width: 4.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.9rem;
   }
 
   a {
