@@ -3,7 +3,7 @@ import MotionHoc from "./MotionHoc";
 import "./Document.css";
 import Add from "../../assets/Add.svg";
 import db from "../.././firebase";
-import { collection, getDocs, doc, setDoc } from "firebase/firestore";
+import { collection, getDocs, doc, setDoc, addDoc } from "firebase/firestore";
 import BookCard from "../Cards/BookCard";
 import Popup from "./PopUpForm";
 import CenterBar from "./Dashboard/CenterBar";
@@ -14,26 +14,31 @@ const DocumentsComponent = () => {
   const [docs, setDocs] = useState([]);
 
   const [isOpen, setIsOpen] = useState(false);
-  const [bookData, setBookData] = useState({
-    'id': '',
-    'author': '',
-    'title': '',
-    'cover': '',
-    'ebook': '',
-    'subId': '',
-    'tags': [],
-    'userPrice': [{
-      'price': '',
-      'user': ''
-    }]
-  });
+  
+  const def = {
+    id: "",
+    author: "",
+    title: "",
+    cover: "",
+    ebook: "",
+    subId: "",
+    tags: ["#pdf", "#ebook"],
+    userPrice: [
+      {
+        price: "",
+        user: "",
+      },
+    ],
+  };
+
+  const [bookData, setBookData] = useState(def);
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
 
   const addBook = () => {
-    setDoc(doc(db, "books", bookData.id), {
+    const data = {
       'Author': bookData.author,
       'Title': bookData.title,
       'Cover': bookData.cover,
@@ -41,20 +46,23 @@ const DocumentsComponent = () => {
       'SubjectID': bookData.subId,
       'Tags': bookData.tags,
       'User-Price': bookData.userPrice,
-    });
+    };
+    setDoc(doc(ref), data);
+    togglePopup();
+    setBookData(def);
   }
 
   useEffect(() => {
     getDocs(ref)
       .then((snapshot) => {
         snapshot.forEach((doc) => {
-          console.log(doc.id, ' ' , doc.data());
+          // console.log(doc.id, ' ' , doc.data());
           setDocs(d => {
             return [...d, {'id': doc.id, 'data': doc.data()}];
           })
         });
     });
-    console.log(docs);    
+    // console.log(docs);    
   }, []);
 
   return (

@@ -15,7 +15,7 @@
   height: auto;
   max-height: 70vh;
   margin-top: calc(100vh - 85vh - 20px);
-  background: #fff;
+  background: rgba(128, 128, 128,1);
   border-radius: 4px;
   padding: 20px;
   border: 1px solid #999;
@@ -101,7 +101,7 @@ body {
   border-radius: 2px;
 }
 
-.PopupForm button {
+.PopupForm .add-book {
   padding: 19px 39px 18px 39px;
   color: #fff;
   background-color: #4bc970;
@@ -137,7 +137,7 @@ body {
 }
 
 .PopupForm .number {
-  background-color: #5fcf80;
+  background-color: #000;
   color: #fff;
   height: 30px;
   width: 30px;
@@ -156,6 +156,21 @@ body {
   }
 }
 
+.PopupForm .add-btn {
+  position: relative;
+  left: 17px;
+  top: 49px;
+  display: inline-block;
+  padding: 3px 5px 1px 5px;
+  background-color: #4bc970;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  border-width: 1px 1px 3px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
 .PopupForm .rupee-img {
   position: relative;
   left: 17px;
@@ -165,7 +180,9 @@ body {
   display: inline-block;
   /* background-image: url("rupee.png"); */
 }
-
+.PopupForm #Tags {
+  padding-left: 50px;
+}
 .PopupForm #Price {
-  padding-left: 40px;
+  padding-left: 50px;
 }
