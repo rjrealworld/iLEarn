@@ -63,13 +63,13 @@ export default function PopUpForm(props) {
                   <span class="number">2</span> Some more details
                 </legend>
                 <label for="Tags">Tags:</label>
+                <button type="submit" className="add-btn">+</button>
                 <input type="text" id="Tags" name="Tags" />
                 <label for="Price">Price:</label>
                 <span class="rupee-img">&#8377;</span>
                 <input type="number" id="Price" name="Price" />
               </fieldset>
-
-              <button type="submit" onClick={props.addData}>Add Book</button>
+              <button type="submit" onClick={props.addData} class="add-book">Add Book</button>
             </form>
           </div>
         </div>
