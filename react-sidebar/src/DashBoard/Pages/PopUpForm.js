@@ -16,10 +16,10 @@ export default function PopUpForm(props) {
         <div class="row">
           <div class="col-md-12">
             <form action="index.html" method="post" className="PopupForm">
-              <h1> Upload </h1>
+              {/* <h1> Upload </h1> */}
               <fieldset>
                 <legend>
-                  <span class="number">1</span>Basic Info
+                  <span class="number">1</span> Basic Info
                 </legend>
                 <label for="Title">Book Name:</label>
                 <input
@@ -58,6 +58,7 @@ export default function PopUpForm(props) {
                   value={props.data.subID}
                 />
               </fieldset>
+              <hr></hr>
               <fieldset>
                 <legend>
                   <span class="number">2</span> Some more details
