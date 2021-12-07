@@ -130,7 +130,7 @@ body {
 }
 
 .PopupForm label {
-  display: block;
+  display: inline-flex;
   margin-bottom: 8px;
 }
 
@@ -161,7 +161,7 @@ body {
 
 .PopupForm .add-btn {
   position: relative;
-  left: 17px;
+  left: -27px;
   top: 49px;
   display: inline-block;
   padding: 3px 5px 1px 5px;
@@ -176,16 +176,16 @@ body {
 }
 .PopupForm .rupee-img {
   position: relative;
-  left: 17px;
-  top: 33px;
+  left: -27px;
+  top: 40px;
   height: 14px;
   width: 10px;
   display: inline-block;
   /* background-image: url("rupee.png"); */
 }
 .PopupForm #Tags {
-  padding-left: 50px;
+  padding-left: 40px;
 }
 .PopupForm #Price {
-  padding-left: 50px;
+  padding-left: 40px;
 }
