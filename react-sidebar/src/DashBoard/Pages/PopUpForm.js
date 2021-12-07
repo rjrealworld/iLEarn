@@ -2,9 +2,6 @@ import React from 'react';
 import "./form.css";
 
 export default function PopUpForm(props) {
-
-
-
     return (
       <div className="popup-box">
         <div className="box">
