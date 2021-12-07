@@ -3,6 +3,8 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+	margin-top: 130%;
+	margin-bottom: 10%;
 }
 
 .float{

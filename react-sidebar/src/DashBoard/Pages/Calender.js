@@ -4,6 +4,8 @@ import Add from "../../assets/Add.svg";
 import "./Calender.css";
 import db from "../.././firebase";
 import EventCard from "../Cards/EventCard";
+import events from "../../assets/events.svg";
+import CenterBar from "./Dashboard/CenterBar";
 import { collection, getDocs, doc, setDoc } from "firebase/firestore";
 
 const CalenderComponent = () => {
@@ -38,7 +40,8 @@ const CalenderComponent = () => {
 
   return (
     <div>
-      <h1>Events</h1>
+      {/* <h1>Events</h1> */}
+      <CenterBar p1={'Event Pages'} p2={"See what's coming up!"} image={events}/>
       <div className="container-events">
         <EventCard
           name="Event"

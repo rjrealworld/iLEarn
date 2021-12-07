@@ -1,3 +1,8 @@
+html {
+	overflow-y: scroll;
+	height: calc(100vh - 127px);
+}
+
 .container-doc {
 	width: 100%;
 	height: 85vh;
@@ -11,6 +16,7 @@
 .row-book {
 	display: flex;
 	justify-content: space-around;
+	margin-top:40%;
 }
 
 .float{
