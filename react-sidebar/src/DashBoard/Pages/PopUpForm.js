@@ -13,7 +13,7 @@ export default function PopUpForm(props) {
           </span>
           <div class="row">
             <div class="col-md-12">
-              <form action="index.html" method="post">
+              <form action="index.html" method="post" className="PopupForm">
                 <h1> Upload </h1>
                 <fieldset>
                   <legend>

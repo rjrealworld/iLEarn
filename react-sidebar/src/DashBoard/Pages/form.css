@@ -51,7 +51,7 @@ body {
   color: #384047;
 }
 
-form {
+.PopupForm {
   max-width: 300px;
   margin: 10px auto;
   padding: 10px 20px;
@@ -59,23 +59,23 @@ form {
   border-radius: 8px;
 }
 
-h1 {
+.PopupForm h1 {
   margin: 0 0 30px 0;
   text-align: center;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="date"],
-input[type="datetime"],
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="time"],
-input[type="url"],
-textarea,
-select {
+.PopupForm input[type="text"],
+.PopupForm input[type="password"],
+.PopupForm input[type="date"],
+.PopupForm input[type="datetime"],
+.PopupForm input[type="email"],
+.PopupForm input[type="number"],
+.PopupForm input[type="search"],
+.PopupForm input[type="tel"],
+.PopupForm input[type="time"],
+.PopupForm input[type="url"],
+.PopupForm textarea,
+.PopupForm select {
   background: rgba(255, 255, 255, 0.1);
   border: none;
   font-size: 16px;
@@ -90,18 +90,18 @@ select {
   margin-bottom: 30px;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
+.PopupForm .input[type="radio"],
+.PopupForm input[type="checkbox"] {
   margin: 0 4px 8px 0;
 }
 
-select {
+.PopupForm select {
   padding: 6px;
   height: 32px;
   border-radius: 2px;
 }
 
-button {
+.PopupForm button {
   padding: 19px 39px 18px 39px;
   color: #fff;
   background-color: #4bc970;
@@ -116,27 +116,27 @@ button {
   margin-bottom: 10px;
 }
 
-fieldset {
+.PopupForm fieldset {
   margin-bottom: 30px;
   border: none;
 }
 
-legend {
+.PopupForm legend {
   font-size: 1.4em;
   margin-bottom: 10px;
 }
 
-label {
+.PopupForm label {
   display: block;
   margin-bottom: 8px;
 }
 
-label.light {
+.PopupForm label.light {
   font-weight: 300;
   display: inline;
 }
 
-.number {
+.PopupForm .number {
   background-color: #5fcf80;
   color: #fff;
   height: 30px;
@@ -151,12 +151,12 @@ label.light {
 }
 
 @media screen and (min-width: 480px) {
-  form {
+  .PopupForm {
     max-width: 480px;
   }
 }
 
-.rupee-img {
+.PopupForm .rupee-img {
   position: relative;
   left: 17px;
   top: 33px;
@@ -166,6 +166,6 @@ label.light {
   /* background-image: url("rupee.png"); */
 }
 
-#Price {
+.PopupForm #Price {
   padding-left: 40px;
 }
