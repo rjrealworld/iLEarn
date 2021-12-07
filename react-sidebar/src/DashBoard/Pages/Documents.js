@@ -6,6 +6,8 @@ import db from "../.././firebase";
 import { collection, getDocs, doc, setDoc } from "firebase/firestore";
 import BookCard from "../Cards/BookCard";
 import Popup from "./PopUpForm";
+import CenterBar from "./Dashboard/CenterBar";
+import documents from "../../assets/documents.svg";
 
 const DocumentsComponent = () => {
   const ref = collection(db, "books");
@@ -59,6 +61,8 @@ const DocumentsComponent = () => {
     <div>
       {isOpen && <Popup handleClose={togglePopup} data={formData} setForm={setFormData} addData={addBook} />}
       <h1>Documents</h1>
+      {/* <h1>Documents</h1> */}
+      <CenterBar p1={'Reference Books'} p2={"Get all the material here"} image={documents}/>
       <div className="container-doc">
         <div className="row-book">
           {docs.map((doc) => (

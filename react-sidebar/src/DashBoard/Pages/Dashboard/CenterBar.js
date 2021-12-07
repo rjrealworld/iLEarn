@@ -2,14 +2,14 @@ import React from 'react';
 
 import './CenterBar.css';
 
-function centerBar() {
+function centerBar(props) {
     return (
         <div className="centerBar">        
-            <img src="/assets/images/Teaching-rafiki.png" alt="teaching" className="centerImage" />
+            <img src={props.image} alt="teaching" className="centerImage" />
             <div className="vl" />
             <div className="paragraph">
-                <p>Hey there!</p>
-                <p>Let's start today's learning.</p>
+                <p>{props.p1}</p>
+                <p>{props.p2}</p>
             </div>
         </div>
     )

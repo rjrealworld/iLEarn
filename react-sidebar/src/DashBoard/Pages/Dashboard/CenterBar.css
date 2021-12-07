@@ -17,7 +17,7 @@
     background: var(--dark-mode-bg-color);
     border-radius: 20px 20px;
     position:absolute;  
-    left:15%;
+    left:30%;
     right:202px;
     top:10%;
     width: 50%;
@@ -30,7 +30,7 @@
 }
 
 .centerImage {
-    height: 102%;
+    height: 92%;
     padding-left: 30px;
     margin-right: 50px;
 }
@@ -73,7 +73,7 @@
 
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1439px) {
     .centerBar  {
-      left: 15%;
+      left: 30%;
       height: 154px;
     }
 
