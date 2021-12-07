@@ -14,6 +14,8 @@ const CalenderComponent = () => {
   const ref = collection(db, "events");
   const [eventList, setEventList] = useState([]);
 
+  
+
   const handleClick = ({}) => {
     setDoc(doc(db, "events", "Event-t"), {
       'Name': "Temp",
@@ -29,13 +31,11 @@ const CalenderComponent = () => {
   useEffect(() => {
     getDocs(ref).then((snapshot) => {
       snapshot.forEach((event) => {
-        // console.log(event.id, " ", event.data());
         setEventList((d) => {
           return [...d, {'id': event.id, 'data': event.data()}];
         });
       });
     });
-    // console.log(eventList);
   }, []);
 
   return (
@@ -43,8 +43,7 @@ const CalenderComponent = () => {
       {/* <h1>Events</h1> */}
       <CenterBar p1={'Event Pages'} p2={"See what's coming up!"} image={events}/>
       <div className="container-events">
-      {console.log(eventList)}
-        
+      {console.log(eventList)}        
         {eventList.map((evnt) => (
           <EventCard
             name={evnt.data.Name}

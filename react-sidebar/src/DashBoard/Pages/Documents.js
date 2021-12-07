@@ -14,7 +14,7 @@ const DocumentsComponent = () => {
   const [docs, setDocs] = useState([]);
 
   const [isOpen, setIsOpen] = useState(false);
-  const [formData, setFormData] = useState({
+  const [bookData, setBookData] = useState({
     'id': '',
     'author': '',
     'title': '',
@@ -33,14 +33,14 @@ const DocumentsComponent = () => {
   };
 
   const addBook = () => {
-    setDoc(doc(db, "books", formData.id), {
-      'Author': formData.author,
-      'Title': formData.title,
-      'Cover': formData.cover,
-      'E-Book': formData.ebook,
-      'SubjectID': formData.subId,
-      'Tags': formData.tags,
-      'User-Price': formData.userPrice,
+    setDoc(doc(db, "books", bookData.id), {
+      'Author': bookData.author,
+      'Title': bookData.title,
+      'Cover': bookData.cover,
+      'E-Book': bookData.ebook,
+      'SubjectID': bookData.subId,
+      'Tags': bookData.tags,
+      'User-Price': bookData.userPrice,
     });
   }
 
@@ -59,7 +59,7 @@ const DocumentsComponent = () => {
 
   return (
     <div>
-      {isOpen && <Popup handleClose={togglePopup} data={formData} setForm={setFormData} addData={addBook} />}
+      {isOpen && <Popup handleClose={togglePopup} data={bookData} setForm={setBookData} addData={addBook} />}
       {/* <h1>Documents</h1> */}
       <CenterBar p1={'Reference Books'} p2={"Get all the material here"} image={documents}/>
       <div className="container-doc">
