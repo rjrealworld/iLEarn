@@ -1,9 +1,0 @@
-.profileImage {
-    position: absolute;
-    top: 3%;
-    left: 10%;
-}
-
-.styleProfileImage:hover {
-    roundedColor: #fff;
-}
