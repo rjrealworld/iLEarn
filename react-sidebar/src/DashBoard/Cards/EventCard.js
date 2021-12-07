@@ -3,7 +3,7 @@ import "./EventCard.css";
 
 export default function EventCard(props) {
     return (
-      <div className="Card">
+      <div className="EventCard">
         <div className="upper-container">
           <div className="image-container">
             <img

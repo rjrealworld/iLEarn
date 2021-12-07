@@ -7,7 +7,7 @@ export default function BookCard(props) {
     let { title, originalPrice, newPrice, rupess, author } = props;
 
     return (
-      <div className="card">
+      <div className="BookCard">
         <div className="wrapper">
           <div className={newClassName}></div>
           <div className="cardImg" style={{ backgroundImage: bgImg }}></div>
