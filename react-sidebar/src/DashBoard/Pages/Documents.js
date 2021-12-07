@@ -60,7 +60,6 @@ const DocumentsComponent = () => {
   return (
     <div>
       {isOpen && <Popup handleClose={togglePopup} data={formData} setForm={setFormData} addData={addBook} />}
-      <h1>Documents</h1>
       {/* <h1>Documents</h1> */}
       <CenterBar p1={'Reference Books'} p2={"Get all the material here"} image={documents}/>
       <div className="container-doc">

@@ -29,13 +29,13 @@ const CalenderComponent = () => {
   useEffect(() => {
     getDocs(ref).then((snapshot) => {
       snapshot.forEach((event) => {
-        console.log(event.id, " ", event.data());
+        // console.log(event.id, " ", event.data());
         setEventList((d) => {
           return [...d, {'id': event.id, 'data': event.data()}];
         });
       });
     });
-    console.log(eventList);
+    // console.log(eventList);
   }, []);
 
   return (
@@ -43,14 +43,9 @@ const CalenderComponent = () => {
       {/* <h1>Events</h1> */}
       <CenterBar p1={'Event Pages'} p2={"See what's coming up!"} image={events}/>
       <div className="container-events">
-        {/* <EventCard
-          name="Event"
-          date="2020-06-01"
-          description="Description"
-          img={imgURL}
-          alt="altText"
-        /> */}
-        {eventList.map((evnt) => {
+      {console.log(eventList)}
+        
+        {eventList.map((evnt) => (
           <EventCard
             name={evnt.data.Name}
             date="2020-06-01"
@@ -58,7 +53,7 @@ const CalenderComponent = () => {
             img={evnt.data.Poster}
             alt={evnt.id}
           />
-        })}
+        ))}
       </div>
       <div className="float" onClick={handleClick}>
         <img src={Add} className="my-float" />
