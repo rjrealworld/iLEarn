@@ -1,11 +1,20 @@
 import React from "react";
 import "./form.css";
+import {useAuth} from "../../contexts/AuthContext";
 
 export default function PopUpForm(props) {
+  // const [price, setPrice] = React.useState();
+  const [tagList, setTags] = React.useState([]);
+  const {currUser} = useAuth();
 
-  const [tags, setTags] = React.useState([]);
+  const handleTags = (e) => { 
+    setTags(prev => [...prev, e.target.value]);
+    props.setData(p => ({...p, 'tags': [...p.tags, tagList]}));
+  }
 
-  
+  const handleChange = (e) => {
+    props.setData(p => ({...p, [e.target.name]: e.target.value}));
+  }
 
   return (
     <div className="popup-box">
@@ -25,37 +34,41 @@ export default function PopUpForm(props) {
                 <input
                   type="text"
                   id="Title"
-                  name="Title"
+                  name="title"
                   value={props.data.title}
-
+                  onChange={handleChange}
                 />
                 <label for="Author">Book Author:</label>
                 <input
                   type="text"
                   id="Author"
-                  name="Author"
+                  name="author"
                   value={props.data.author}
+                  onChange={handleChange}
                 />
                 <label for="Cover">Cover Page:</label>
                 <input
                   type="text"
                   id="Cover"
-                  name="Cover"
+                  name="cover"
                   value={props.data.cover}
+                  onChange={handleChange}
                 />
                 <label for="E-Book">E-Book Link:</label>
                 <input
                   type="text"
                   id="E-Book"
-                  name="E-Book"
+                  name="ebook"
                   value={props.data.ebook}
+                  onChange={handleChange}
                 />
                 <label for="subjectID">Subject Id:</label>
                 <input
                   type="text"
                   id="subjectID"
-                  name="subjectID"
+                  name="subId"
                   value={props.data.subID}
+                  onChange={handleChange}
                 />
               </fieldset>
               <fieldset>
@@ -63,10 +76,19 @@ export default function PopUpForm(props) {
                   <span class="number">2</span> Some more details
                 </legend>
                 <label for="Tags">Tags:</label>
-                <input type="text" id="Tags" name="Tags" />
+                <input 
+                  type="text" 
+                  id="Tags" 
+                  name="Tags"                  
+                />
                 <label for="Price">Price:</label>
                 <span class="rupee-img">&#8377;</span>
-                <input type="number" id="Price" name="Price" />
+                <input 
+                  type="number" 
+                  id="Price" 
+                  name="Price" 
+                  // value={price} 
+                />
               </fieldset>
 
               <button type="submit" onClick={props.addData}>Add Book</button>
