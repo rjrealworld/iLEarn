@@ -9,15 +9,21 @@ const DocumentsComponent = () => {
   const ref = collection(db, "books");
   const [docs, setDocs] = useState([]);
 
-  useEffect(() => {    
-    onSnapshot(ref, (snapshot) => {
-      const t = [];
-      snapshot.forEach(doc => {
-        t.push(doc.data());
-      });
-      setDocs(t);
+  useEffect(() => {
+    // const t = [];    
+    getDocs(ref)
+      .then((snapshot) => {
+        snapshot.forEach((doc) => {
+          // console.log(doc.data());
+          // t.push(doc.data());
+          setDocs(d => {
+            return [...d, doc.data()];
+          })
+        });
+        // console.log(docs);
     });
-    console.log(docs);
+    // setDocs(t);
+    console.log(docs);    
   }, []);
 
   return (
@@ -25,52 +31,20 @@ const DocumentsComponent = () => {
       <h1>Documents</h1>
       <div className="container-doc">
         <div className="row-book">
-          <BookCard
-            title="Advanced Engineering Mathematics"
-            images="https://images-na.ssl-images-amazon.com/images/I/41466wS8dYL.jpg"
-            originalPrice="550"
-            newPrice="200"
-            rupess="&#x20B9;"
-            alt="Book1"
-            author="R.K. Jain & S.R.K. Iyenger"
-          />
-          <BookCard
-            title="Advanced Engineering Mathematics"
-            images="https://images-na.ssl-images-amazon.com/images/I/41466wS8dYL.jpg"
-            originalPrice="550"
-            newPrice="200"
-            rupess="&#x20B9;"
-            alt="Book2"
-            author="R.K. Jain & S.R.K. Iyenger"
-          />
-          <BookCard
-            title="Advanced Engineering Mathematics"
-            images="https://images-na.ssl-images-amazon.com/images/I/41466wS8dYL.jpg"
-            originalPrice="550"
-            newPrice="200"
-            rupess="&#x20B9;"
-            alt="Book3"
-            author="R.K. Jain & S.R.K. Iyenger"
-          />
-          <BookCard
-            title="Advanced Engineering Mathematics"
-            images="https://images-na.ssl-images-amazon.com/images/I/41466wS8dYL.jpg"
-            originalPrice="550"
-            newPrice="200"
-            rupess="&#x20B9;"
-            alt="Book4"
-            author="R.K. Jain & S.R.K. Iyenger"
-          />
+          {docs.map((doc) => (
+            <BookCard
+              title={doc.Title}
+              author={doc.Author}
+              rupess="&#x20B9;"
+              originalPrice="550"
+              newPrice="200"
+              alt={doc.Title}
+              images={doc.Cover}
+            />
+          ))}
         </div>
       </div>
     </div>
-    // {/* {docs.map((doc) => (
-    //     <div>
-    //       <h2>{doc.title}</h2>
-    //       <p>{doc.author}</p>
-    //       <p>{doc.subId}</p>
-    //     </div>
-    // ))} */}
   );
 }
 
