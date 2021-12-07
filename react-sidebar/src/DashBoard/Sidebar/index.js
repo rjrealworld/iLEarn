@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {Container, Button, SidebarContainer, Logo, SlickBar, Item, Text, Profile, Details, Name, Logout} from './indexComponents';
 
-//All the svg files
 import logo from "../../assets/logo.svg";
 import Grid from "../../assets/grid.svg";
 import TeamImg from "../../assets/social.svg";
@@ -23,9 +22,7 @@ const Sidebar = () => {
 
   return (
     <Container>
-      <Button clicked={click} onClick={() => handleClick()}>
-        Click
-      </Button>
+      <Button clicked={click} onClick={() => handleClick()} />
       <SidebarContainer>
         <Logo>
           <img src={logo} alt="logo" />

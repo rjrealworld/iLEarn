@@ -5,22 +5,40 @@ import Add from "../../assets/Add.svg";
 import db from "../.././firebase";
 import { collection, getDocs, doc, setDoc } from "firebase/firestore";
 import BookCard from "../Cards/BookCard";
+import Popup from "./PopUpForm";
 
 const DocumentsComponent = () => {
   const ref = collection(db, "books");
   const [docs, setDocs] = useState([]);
 
-  const handleClick = ({}) => {
-    // console.log("clicked");
-    setDoc(doc(db, "books", "Book-t"), {
-      'Author': "Author-temp",
-      'Title': "Book-temp",
-      'Cover': "",
-      'E-Book': "",
-      'SubjectID': "",
-      'Tags': ["#pdf", "book"],
-      'Title': "Book-temp-title",
-      'User-Price': [{'Price': 800, 'User': "Anonymous"}, {'Price': 650, 'User': "Anon"}],
+  const [isOpen, setIsOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    'id': '',
+    'author': '',
+    'title': '',
+    'cover': '',
+    'ebook': '',
+    'subId': '',
+    'tags': [],
+    'userPrice': [{
+      'price': '',
+      'user': ''
+    }]
+  });
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const addBook = () => {
+    setDoc(doc(db, "books", formData.id), {
+      'Author': formData.author,
+      'Title': formData.title,
+      'Cover': formData.cover,
+      'E-Book': formData.ebook,
+      'SubjectID': formData.subId,
+      'Tags': formData.tags,
+      'User-Price': formData.userPrice,
     });
   }
 
@@ -39,6 +57,7 @@ const DocumentsComponent = () => {
 
   return (
     <div>
+      {isOpen && <Popup handleClose={togglePopup} data={formData} setForm={setFormData} addData={addBook} />}
       <h1>Documents</h1>
       <div className="container-doc">
         <div className="row-book">
@@ -55,8 +74,8 @@ const DocumentsComponent = () => {
           ))}
         </div>
       </div>
-      <div className="float" onClick={handleClick}>
-            <img src={Add} className="my-float" />
+      <div className="float" onClick={togglePopup}>
+        <img src={Add} className="my-float" />
       </div>
     </div>
   );

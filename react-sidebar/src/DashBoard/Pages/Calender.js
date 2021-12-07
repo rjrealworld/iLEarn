@@ -40,13 +40,13 @@ const CalenderComponent = () => {
     <div>
       <h1>Events</h1>
       <div className="container-events">
-        <EventCard
+        {/* <EventCard
           name="Event"
           date="2020-06-01"
           description="Description"
           img={imgURL}
           alt="altText"
-        />
+        /> */}
         {eventList.map((evnt) => {
           <EventCard
             name={evnt.data.Name}
