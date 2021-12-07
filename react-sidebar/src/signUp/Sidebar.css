@@ -1,0 +1,146 @@
+.Container {
+    min-width: 400px;
+    backdrop-filter: blur(35px);
+    background-color: #09090c78;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+@media (max-width: 900px) {
+    .Container {
+        width: 100vw;
+        position: absolute;
+        padding: 0;
+    }
+}
+
+.Container h4 {
+    color: #fff;
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 2rem;
+}
+
+.Container h4 span {
+    color: #a4b2bc;
+    cursor: pointer;
+}
+
+.Container h4 span:hover {
+    color: #FFF3D2;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.Form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Form h3 {
+    color: #09090c;
+    margin-bottom: 2rem;
+}
+
+.Form button {
+    width: 75%;
+    max-width: 350px;
+    min-width: 250px;
+    height: 40px;
+    border: none;
+    margin: 1rem 0;
+    box-shadow: 0px 14px 9px -15px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    background-color: #09090c;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+
+.Form button:hover {
+    transform: translateY(-3px);
+}
+
+.LogoWrapper img {
+    height: 6rem;
+}
+
+.LogoWrapper h3 {
+    color: #09090c;
+    text-align: center;
+    font-size: 22px;
+}
+
+.LogoWrapper span {
+    color: #fff;
+    font-weight: 400;
+    font-size: 21px;
+}
+
+.ContainerInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.StyledInput {
+  width: 80%;
+  max-width: 350px;
+  min-width: 250px;
+  height: 40px;
+  border: none;
+  margin: 0.5rem 0;
+  background-color: #f5f5f5;
+  box-shadow: 0px 14px 9px -15px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 0 1rem;
+  transition: all 0.2s ease-in;
+}
+
+.StyledInput:hover {
+  transform: translateY(-3px);
+}
+
+.Status {
+  height: 10px;
+  width: 10px;
+  background: #a4b2bc;
+  border-radius: 10px;
+  margin-left: 1rem;
+}
+
+.StyledInput:focus:invalid + .Status {
+  background: red;
+}
+
+.StyledInput:valid + .Status {
+  background: green;
+}
+
+#form-link {
+  margin-left: 5px;
+  text-decoration: none;
+}
+
+#google-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  color: #09090c;
+  margin-top: auto;
+}
+
+#google-btn .google-icon {
+  height: 65%;
+  width: auto;
+  padding-left: 5px;
+}
