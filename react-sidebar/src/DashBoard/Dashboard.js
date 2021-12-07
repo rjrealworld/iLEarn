@@ -17,7 +17,7 @@ const Pages = styled.div`
 
   h1 {
     font-size: calc(2rem + 2vw);
-    background: linear-gradient(to right, #803bec 30%, #1b1b1b 100%);
+    background: linear-gradient(to right, #09090c, #09090c);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }

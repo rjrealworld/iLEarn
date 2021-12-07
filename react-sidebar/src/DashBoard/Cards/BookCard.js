@@ -27,7 +27,7 @@ export default function BookCard(props) {
               </div>
               <div className="contact">
                 <img
-                  src="https://img.icons8.com/external-flatarticons-blue-flatarticons/65/000000/external-contacts-strategy-flatarticons-blue-flatarticons.png"
+                  src="https://img.icons8.com/material-outlined/24/000000/mail.png"
                   alt="contact"
                 />
               </div>

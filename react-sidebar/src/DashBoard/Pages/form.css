@@ -13,7 +13,7 @@
   width: 70%;
   margin: 0 auto;
   height: auto;
-  max-height: 70vh;
+  max-height: 80vh;
   margin-top: calc(100vh - 85vh - 20px);
   background: rgba(128, 128, 128,1);
   border-radius: 4px;
@@ -26,13 +26,13 @@
   content: "x";
   cursor: pointer;
   position: fixed;
-  right: calc(15% - 30px);
+  right: calc(15% - 10px);
   top: calc(100vh - 85vh - 33px);
   background: #ededed;
-  width: 25px;
-  height: 25px;
+  width: 37px;
+  height: 37px;
   border-radius: 50%;
-  line-height: 20px;
+  line-height: 34px;
   text-align: center;
   border: 1px solid #999;
   font-size: 20px;
@@ -101,23 +101,26 @@ body {
   border-radius: 2px;
 }
 
+.PopupForm hr {
+  margin-bottom: 30px;
+}
 .PopupForm .add-book {
   padding: 19px 39px 18px 39px;
   color: #fff;
-  background-color: #4bc970;
+  background-color: #09090c;
   font-size: 18px;
   text-align: center;
   font-style: normal;
   border-radius: 5px;
   width: 100%;
-  border: 1px solid #3ac162;
+  border: 1px solid #09090c;
   border-width: 1px 1px 3px;
   box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
   margin-bottom: 10px;
 }
 
 .PopupForm fieldset {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   border: none;
 }
 
@@ -127,7 +130,7 @@ body {
 }
 
 .PopupForm label {
-  display: block;
+  display: inline-flex;
   margin-bottom: 8px;
 }
 
@@ -137,7 +140,7 @@ body {
 }
 
 .PopupForm .number {
-  background-color: #000;
+  background-color: #09090c;
   color: #fff;
   height: 30px;
   width: 30px;
@@ -158,11 +161,11 @@ body {
 
 .PopupForm .add-btn {
   position: relative;
-  left: 17px;
+  left: -27px;
   top: 49px;
   display: inline-block;
   padding: 3px 5px 1px 5px;
-  background-color: #4bc970;
+  background-color: #09090c;
   font-size: 18px;
   text-align: center;
   font-style: normal;
@@ -170,19 +173,20 @@ body {
   border-width: 1px 1px 3px;
   margin-bottom: 10px;
   cursor: pointer;
+  color: #fff;
 }
 .PopupForm .rupee-img {
   position: relative;
-  left: 17px;
-  top: 33px;
+  left: -27px;
+  top: 40px;
   height: 14px;
   width: 10px;
   display: inline-block;
   /* background-image: url("rupee.png"); */
 }
 .PopupForm #Tags {
-  padding-left: 50px;
+  padding-left: 40px;
 }
 .PopupForm #Price {
-  padding-left: 50px;
+  padding-left: 40px;
 }

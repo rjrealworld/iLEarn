@@ -37,7 +37,7 @@ export default function PopUpForm(props) {
               <h1> Upload Book </h1>
               <fieldset>
                 <legend>
-                  <span class="number">1</span>Basic Info
+                  <span class="number">1</span> Basic Info
                 </legend>
                 <label for="Title">Book Name:</label>
                 <input
@@ -80,6 +80,7 @@ export default function PopUpForm(props) {
                   onChange={handleChange}
                 />
               </fieldset>
+              <hr></hr>
               <fieldset>
                 {/* <legend>
                   <span class="number">2</span> Some more details
