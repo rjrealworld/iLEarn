@@ -15,7 +15,7 @@
   height: auto;
   max-height: 70vh;
   margin-top: calc(100vh - 85vh - 20px);
-  background: #fff;
+  background: rgba(128, 128, 128,1);
   border-radius: 4px;
   padding: 20px;
   border: 1px solid #999;
@@ -137,7 +137,7 @@ body {
 }
 
 .PopupForm .number {
-  background-color: #5fcf80;
+  background-color: #000;
   color: #fff;
   height: 30px;
   width: 30px;
