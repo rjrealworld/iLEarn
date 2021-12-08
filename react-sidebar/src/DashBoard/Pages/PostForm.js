@@ -21,11 +21,8 @@ export default function PostForm(props) {
           <div class="row">
             <div class="col-md-12">
               <form className="PopupForm">
-                <h1> Add Project </h1>
+                <h1> Add doubt </h1>
                 <fieldset>
-                  <legend>
-                    <span class="number">1</span>Basic Info
-                  </legend>
                   <label for="proj">Project Name:</label>
                   <input
                     type="text"

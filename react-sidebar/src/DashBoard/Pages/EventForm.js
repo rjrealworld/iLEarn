@@ -22,9 +22,6 @@ export default function EventForm(props) {
             <form className="PopupForm">
               <h1> New Event </h1>
               <fieldset>
-                <legend>
-                  <span class="number">1</span>Basic Info
-                </legend>
                 <label for="Event">Event Name:</label>
                 <input
                   type="text"
