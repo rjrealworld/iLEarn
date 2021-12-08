@@ -81,13 +81,15 @@
 }
 .count {
     position: absolute;
+    cursor: pointer;
 }
 .attendees{
     position: relative;
-    top: 40px;
+    top: 15px;
     left: 15px;
 }
 .att-count {
     position: relative;
     left: 35px;
+    top: -25px;
 }

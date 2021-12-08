@@ -24,6 +24,7 @@ const CalenderComponent = () => {
     end: "",
     venue: "",
     description: "",
+    count: 0,
   };
 
   const [eventData, setEventData] = useState(def);
@@ -37,6 +38,7 @@ const CalenderComponent = () => {
       eventData.poster = "https://www.pngrepo.com/png/190685/512/calendar.png";
     }
     const data = {
+      id: eventData.id,
       Name: eventData.name,
       OrganisedBy: eventData.orgBy,
       Poster: eventData.poster,
@@ -44,6 +46,7 @@ const CalenderComponent = () => {
       End: eventData.end,
       Venue: eventData.venue,
       Desc: eventData.description,
+      LikeCount: eventData.count,
     };
     setDoc(doc(ref), data);
     togglePopup();
@@ -79,6 +82,8 @@ const CalenderComponent = () => {
       <div className="container-events">
         {eventList.map((evnt) => (
           <EventCard
+            key={evnt.id}
+            id={evnt.id}
             name={evnt.data.Name}
             sDate={evnt.data.Start}
             eDate={evnt.data.End}
@@ -86,6 +91,7 @@ const CalenderComponent = () => {
             description={evnt.data.Desc}
             img={evnt.data.Poster}
             alt={evnt.id}
+            count={evnt.data.LikeCount}
           />
         ))}
       </div>

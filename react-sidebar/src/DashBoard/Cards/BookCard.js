@@ -7,11 +7,33 @@ export default function BookCard(props) {
     let bgImg = `url(${props.images})`;
     let { title, originalPrice, newPrice, rupess, author } = props;
 
+    const displayPrice = () => {
+      if(newPrice === 0){
+        return (
+          <p className="price newPrice">
+            FREE
+          </p>
+        );
+      } else {
+        return (
+          <p className="price newPrice">
+            {rupess}
+            {newPrice}
+          </p>
+        );
+      }
+
+    }
+
     return (
       <div className="BookCard">
         <div className="wrapper">
           {/* <div className={newClassName}></div> */}
-          <a href={props.bookLink} rel="noreferrer" target="_blank">
+          <a
+            href={props.originalPrice != 0 ? "#" : props.bookLink}
+            rel="noreferrer"
+            target={props.originalPrice === 0 && "_blank"}
+          >
             <div className="cardImg" style={{ backgroundImage: bgImg }} />
           </a>
           <div className="cardInfo">
@@ -23,14 +45,11 @@ export default function BookCard(props) {
                   {rupess}
                   {originalPrice}
                 </p>
-                <p className="price newPrice">
-                  {rupess}
-                  {newPrice}
-                </p>
+                {displayPrice()}
               </div>
               <div className="contact">
                 {console.log(props.userMail)}
-                <ButtonMailto mailto={"mailto:"+props.userMail} />
+                <ButtonMailto mailto={"mailto:" + props.userMail} />
               </div>
             </div>
           </div>

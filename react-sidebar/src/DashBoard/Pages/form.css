@@ -177,13 +177,14 @@ body {
 }
 .PopupForm .rupee-img {
   position: relative;
-  left: -27px;
+  left: -70px;
   top: 40px;
   height: 14px;
   width: 10px;
   display: inline-block;
   /* background-image: url("rupee.png"); */
 }
+
 .PopupForm #Tags {
   padding-left: 40px;
 }

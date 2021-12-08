@@ -75,25 +75,41 @@ export default function PopUpForm(props) {
                 <select
                   id="subject"
                   name="sub"
-                  onChange={e => handleChange(e)}
+                  onChange={(e) => handleChange(e)}
                 >
-                  <option value="" selected="selected"> --Please choose an option --</option>
-                  <option value="COA">Computer Organisation and Architecture</option>
+                  <option value="" selected="selected">
+                    {" "}
+                    --Please choose an option --
+                  </option>
+                  <option value="COA">
+                    Computer Organisation and Architecture
+                  </option>
                   <option value="DSA">Data Structures and Algorithm</option>
                   <option value="DSW">Database Systems and Web</option>
                   <option value="ES">Electrical Science</option>
                   <option value="Maths">Mathematics</option>
-                  <option value="OSSP">Operating Systems and Systems Programming</option>
+                  <option value="OSSP">
+                    Operating Systems and Systems Programming
+                  </option>
                   <option value="Phy">Physics</option>
                   <option value="SDF">Software Development Fundamentals</option>
                 </select>
-                <label for="Price">Price:</label>
+                <label for="lPrice">Listed Price:</label>
                 <span class="rupee-img">&#8377;</span>
                 <input
                   type="number"
-                  id="Price"
-                  name="Price"
-                  value={ref.Price}
+                  id="lPrice"
+                  name="listPrice"
+                  value={ref.listPrice}
+                  onChange={handleRef}
+                />
+                <label for="sPrice">Selling Price:</label>
+                <span class="rupee-img">&#8377;</span>
+                <input
+                  type="number"
+                  id="sPrice"
+                  name="sellPrice"
+                  value={ref.sellPrice}
                   onChange={handleRef}
                 />
               </fieldset>

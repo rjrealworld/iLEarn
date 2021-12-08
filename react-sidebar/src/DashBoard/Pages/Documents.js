@@ -13,6 +13,12 @@ const DocumentsComponent = () => {
   const ref = collection(db, "books");
   const [docs, setDocs] = useState([]);
 
+  const [currSub, setCurrSub] = useState("All");
+
+  const handleChange = (e) => {
+    setCurrSub(e.target.value);
+  }
+
   const [isOpen, setIsOpen] = useState(false);
   
   const def = {
@@ -23,7 +29,8 @@ const DocumentsComponent = () => {
     "ebook": "",
     "sub": "",
     "UserPrice": {
-        "Price": 0,
+        "listPrice": 0,
+        "sellPrice": 0,
         "user": "",
       },
   };
@@ -51,6 +58,8 @@ const DocumentsComponent = () => {
     togglePopup();
     setBookData(def);
   }
+
+  
 
   useEffect(() => {
     getDocs(ref)
@@ -80,35 +89,64 @@ const DocumentsComponent = () => {
         image={documents}
       />
       <fieldset className="filter-search">
-      <label for="subject" className="search">Search by subject Name:</label>
-                <select
-                  id="subject"
-                  name="sub"
-                >
-                  <option value="" selected="selected"> -- Please choose a subject --</option>
-                  <option value="COA">Computer Organisation and Architecture</option>
-                  <option value="DSA">Data Structures and Algorithm</option>
-                  <option value="DSW">Database Systems and Web</option>
-                  <option value="ES">Electrical Science</option>
-                  <option value="Maths">Mathematics</option>
-                  <option value="OSSP">Operating Systems and Systems Programming</option>
-                  <option value="Phy">Physics</option>
-                  <option value="SDF">Software Development Fundamentals</option>
-                </select>
-                </fieldset>
+        <label for="subject" className="search">
+          Search by Subject:
+        </label>
+        <select
+          id="subject"
+          name="sub"
+          onChange={(e) => {
+            handleChange(e);
+          }}
+        >
+          <option value="All" selected="selected">
+            {" "}
+            All{" "}
+          </option>
+          <option value="COA">Computer Organisation and Architecture</option>
+          <option value="DSA">Data Structures and Algorithm</option>
+          <option value="DSW">Database Systems and Web</option>
+          <option value="ES">Electrical Science</option>
+          <option value="Maths">Mathematics</option>
+          <option value="OSSP">
+            Operating Systems and Systems Programming
+          </option>
+          <option value="Phy">Physics</option>
+          <option value="SDF">Software Development Fundamentals</option>
+        </select>
+      </fieldset>
+
       <div className="container-doc">
-        {docs.map((doc) => (
-          <BookCard
-            title={doc.Title}
-            author={doc.Author}
-            rupess="&#x20B9;"
-            images={doc.Cover}
-            bookLink={doc.EBook}
-            originalPrice={doc.UserPrice.Price}
-            newPrice={doc.UserPrice.Price}
-            userMail={doc.UserPrice.user}
-          />
-        ))}
+        {currSub === "All"
+          ? docs.map((doc) => (
+              <BookCard
+                key={doc.id}
+                title={doc.Title}
+                author={doc.Author}
+                rupess="&#x20B9;"
+                images={doc.Cover}
+                bookLink={doc.EBook}
+                originalPrice={doc.UserPrice.listPrice}
+                newPrice={doc.UserPrice.sellPrice}
+                userMail={doc.UserPrice.user}
+              />
+            ))
+          : docs.map(
+              (doc) =>
+                doc.Subject === currSub && (
+                  <BookCard
+                    key={doc.id}
+                    title={doc.Title}
+                    author={doc.Author}
+                    rupess="&#x20B9;"
+                    images={doc.Cover}
+                    bookLink={doc.EBook}
+                    originalPrice={doc.UserPrice.listPrice}
+                    newPrice={doc.UserPrice.sellPrice}
+                    userMail={doc.UserPrice.user}
+                  />
+                )
+            )}
       </div>
       <div className="float" onClick={togglePopup}>
         <img src={Add} className="my-float" />

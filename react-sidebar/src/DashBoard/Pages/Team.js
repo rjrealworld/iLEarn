@@ -91,6 +91,7 @@ const TeamComponent = () => {
         {postList.map((p) => {
           return (
             <Post
+              key={p.id}
               username={p.name}
               userImg="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhVzfQ0dNV81i_D80HcVsJg-QUF4YGb0oqig&usqp=CAU"
               timestamp={p.time.toDate().toString()}
