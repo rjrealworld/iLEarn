@@ -40,3 +40,16 @@ html {
 .my-float{
 	margin-top:18px;
 }
+
+.filter-search {
+	position: absolute;
+    top: 35%;
+	left: 50%;
+	transform: translate(-50%, 50%);
+    border: 0;
+}
+
+.filter-search .search {
+	font-weight: 600;
+	margin-right: 10px;
+}

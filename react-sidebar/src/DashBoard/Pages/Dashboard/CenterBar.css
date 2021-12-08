@@ -17,9 +17,9 @@
     background: var(--dark-mode-bg-color);
     border-radius: 20px 20px;
     position:absolute;  
-    left:30%;
-    right:202px;
+    left:50%;
     top:10%;
+    transform: translate(-50%, 0);
     width: 50%;
     height: 18%;
     display: flex;
@@ -57,9 +57,9 @@
   }
 
 @media only screen and (max-width: 768px) {
-    .centerBar  {
+    /* .centerBar  {
       left: 99px;
-    }
+    } */
 
     .centerBar p {
         font-size: 22px;
@@ -73,7 +73,7 @@
 
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1439px) {
     .centerBar  {
-      left: 30%;
+      /* left: 30%; */
       height: 154px;
     }
 
@@ -89,7 +89,7 @@
 
 @media only screen and (min-device-width: 2560px) {
       .centerBar  {
-        left: 15.5%;
+        /* left: 15.5%; */
         height: 18%;
       }
 
