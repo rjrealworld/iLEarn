@@ -53,7 +53,7 @@ const Sidebar = () => {
             to="/dashboard/teams"
           >
             <img src={TeamImg} alt="Teams" />
-            <Text clicked={click}>Teams</Text>
+            <Text clicked={click}>Community</Text>
           </Item>
 
           <Item
@@ -62,7 +62,7 @@ const Sidebar = () => {
             to="/dashboard/documents"
           >
             <img src={Documents} alt="Books" />
-            <Text clicked={click}>Books</Text>
+            <Text clicked={click}>Resources</Text>
           </Item>
           <Item
             onClick={() => setClick(false)}
