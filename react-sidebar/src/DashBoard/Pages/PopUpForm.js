@@ -63,10 +63,10 @@ export default function PopUpForm(props) {
                   value={props.data.cover}
                   onChange={handleChange}
                 />
-                <label for="E-Book">E-Book Link:</label>
+                <label for="EBook">E-Book Link:</label>
                 <input
                   type="text"
-                  id="E-Book"
+                  id="EBook"
                   name="ebook"
                   value={props.data.ebook}
                   onChange={handleChange}

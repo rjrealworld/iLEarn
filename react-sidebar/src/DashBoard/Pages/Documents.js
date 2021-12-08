@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {Link} from 'react-router-dom';
 import MotionHoc from "./MotionHoc";
 import "./Document.css";
 import Add from "../../assets/Add.svg";
@@ -38,11 +39,14 @@ const DocumentsComponent = () => {
   };
 
   const addBook = () => {
+    if(bookData.cover === "") {
+      bookData.cover = "https://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-5-CRC.png";
+    }
     const data = {
       'Author': bookData.author,
       'Title': bookData.title,
       'Cover': bookData.cover,
-      'E-Book': bookData.ebook,
+      'EBook': bookData.ebook,
       'SubjectID': bookData.subId,
       'Tags': bookData.tags,
       'User-Price': bookData.userPrice,
@@ -67,12 +71,23 @@ const DocumentsComponent = () => {
 
   return (
     <div>
-      {isOpen && <Popup handleClose={togglePopup} data={bookData} setData={setBookData} addData={addBook} />}
+      {isOpen && (
+        <Popup
+          handleClose={togglePopup}
+          data={bookData}
+          setData={setBookData}
+          addData={addBook}
+        />
+      )}
       {/* <h1>Documents</h1> */}
-      <CenterBar p1={'Reference Books'} p2={"Get all the material here"} image={documents}/>
+      <CenterBar
+        p1={"Reference Books"}
+        p2={"Get all the material here"}
+        image={documents}
+      />
       <div className="container-doc">
-        <div className="row-book">
-          {docs.map((doc) => (
+        {docs.map((doc) => (
+          <a href={doc.data.EBook} rel="noreferrer" target="_blank">
             <BookCard
               title={doc.data.Title}
               author={doc.data.Author}
@@ -82,8 +97,8 @@ const DocumentsComponent = () => {
               alt={doc.id}
               images={doc.data.Cover}
             />
-          ))}
-        </div>
+          </a>
+        ))}
       </div>
       <div className="float" onClick={togglePopup}>
         <img src={Add} className="my-float" />

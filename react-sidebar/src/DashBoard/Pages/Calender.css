@@ -1,9 +1,11 @@
 .container-events {
-    display: flex;
+    display: grid;
+	grid-gap: 50px 50px;
+	grid-template-columns: auto auto auto;
     width: 100%;
     justify-content: center;
     align-items: center;
-	margin-top: 75%;
+	margin-top: 85%;
 	margin-bottom: 10%;
 }
 

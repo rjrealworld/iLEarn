@@ -16,7 +16,8 @@ export default function EventCard(props) {
         </div>
         <div className="lower-container">
           <h3> {props.name} </h3>
-          <p> {props.date} </p>
+          <p> {props.orgBy} </p>
+          <p> {props.sDate + ' ~ ' + props.eDate} </p>
           <p> {props.description} </p>
           <button>RSVP</button>
         </div>

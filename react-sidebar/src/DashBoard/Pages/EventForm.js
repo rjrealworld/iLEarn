@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./form.css";
 
 export default function EventForm(props) {
@@ -71,6 +71,13 @@ export default function EventForm(props) {
                   id="venue"
                   name="venue"
                   value={props.data.venue}
+                  onChange={handleChange}
+                />
+                <label for="desc">Description:</label>
+                <textarea
+                  id="desc"
+                  name="description"
+                  value={props.data.description}
                   onChange={handleChange}
                 />
               </fieldset>

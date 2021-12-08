@@ -23,7 +23,7 @@ const CalenderComponent = () => {
     start: "",
     end: "",
     venue: "",
-    count: 0,
+    description: "",
   };
 
   const [eventData, setEventData] = useState(def);
@@ -33,6 +33,9 @@ const CalenderComponent = () => {
   };
 
   const addEvent = () => {
+    if(eventData.poster === "") {
+      eventData.poster = "https://www.pngrepo.com/png/190685/512/calendar.png";
+    }
     const data = {
       Name: eventData.name,
       OrganisedBy: eventData.orgBy,
@@ -40,7 +43,7 @@ const CalenderComponent = () => {
       Start: eventData.start,
       End: eventData.end,
       Venue: eventData.venue,
-      count: eventData.count,
+      Desc: eventData.description,
     };
     setDoc(doc(ref), data);
     togglePopup();
@@ -60,7 +63,6 @@ const CalenderComponent = () => {
 
   return (
     <div>
-      {/* <h1>Events</h1> */}
       {isOpen && (
         <EventForm
           handleClose={togglePopup}
@@ -75,12 +77,13 @@ const CalenderComponent = () => {
         image={events}
       />
       <div className="container-events">
-        {console.log(eventList)}
         {eventList.map((evnt) => (
           <EventCard
             name={evnt.data.Name}
-            date="2020-06-01"
-            description={evnt.data.OrganisedBy}
+            sDate={evnt.data.Start}
+            eDate={evnt.data.End}
+            orgBy={evnt.data.OrganisedBy}
+            description={evnt.data.Desc}
             img={evnt.data.Poster}
             alt={evnt.id}
           />
