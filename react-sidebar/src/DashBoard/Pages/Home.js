@@ -4,6 +4,7 @@ import ProgressBar from "./Dashboard/RightBar/ProgressBar";
 import CenterBar from "./Dashboard/CenterBar";
 import dashBoard from "../../assets/dashBoard.svg";
 import { useAuth } from "../../contexts/AuthContext";
+import UserCard from "./Dashboard/userCards";
 
 const Home = () => {
   const {currentUser} = useAuth();
@@ -13,6 +14,7 @@ const Home = () => {
     <div>
       <CenterBar p1={'Hey ' + name} p2={"Let's start the learning"} image={dashBoard}/>
       {/* <ProgressBar /> */}
+      <UserCard />
     </div>
   );
 };

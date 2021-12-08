@@ -84,7 +84,7 @@ const DocumentsComponent = () => {
         />
       )}
       <CenterBar
-        p1={"Reference Books"}
+        p1={"Resources"}
         p2={"Get all the material here"}
         image={documents}
       />
