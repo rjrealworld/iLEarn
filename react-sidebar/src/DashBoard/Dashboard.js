@@ -10,7 +10,6 @@ import { AnimatePresence } from "framer-motion";
 
 const Pages = styled.div`
   width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
