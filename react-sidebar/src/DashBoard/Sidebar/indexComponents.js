@@ -97,6 +97,7 @@ const SlickBar = styled.ul`
 
 const Item = styled(NavLink)`
   text-decoration: none;
+  height: 100%;
   color: var(--white);
   width: 100%;
   padding: 1rem 0;
