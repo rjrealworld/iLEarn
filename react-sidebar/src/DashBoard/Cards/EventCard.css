@@ -77,3 +77,15 @@
     border: none;
     color: white;
 }
+.count {
+    position: absolute;
+}
+.attendees{
+    position: relative;
+    top: 40px;
+    left: 15px;
+}
+.att-count {
+    position: relative;
+    left: 35px;
+}
