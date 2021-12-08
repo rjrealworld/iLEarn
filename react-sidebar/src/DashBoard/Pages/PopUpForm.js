@@ -1,28 +1,28 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./form.css";
-import {useAuth} from "../../contexts/AuthContext";
+import { useAuth } from "../../contexts/AuthContext";
 
 export default function PopUpForm(props) {
   const [ref, setRef] = useState({
-    'price': 0,
-    'user': '',
+    Price: 0,
+    user: "",
   });
 
-  const {currentUser} = useAuth();
+  const { currentUser } = useAuth();
 
   const handleRef = (e) => {
     setRef({[e.target.name]: e.target.value, 'user': currentUser.email});
-    props.setData((p) => ({...p, 'userPrice': ref}));
+    props.setData((p) => ({...p, 'UserPrice': ref}));
   }
 
   const handleChange = (e) => {
-    props.setData(p => ({...p, [e.target.name]: e.target.value}));
-  }
+    props.setData((p) => ({ ...p, [e.target.name]: e.target.value }));
+  };
 
   const functionCall = (e) => {
     e.preventDefault();
     props.addData();
-  }
+  };
 
   return (
     <div className="popup-box">
@@ -36,9 +36,9 @@ export default function PopUpForm(props) {
             <form className="PopupForm">
               <h1> Upload Book </h1>
               <fieldset>
-                <legend>
+                {/* <legend>
                   <span class="number">1</span> Basic Info
-                </legend>
+                </legend> */}
                 <label for="Title">Book Name:</label>
                 <input
                   type="text"
@@ -71,38 +71,29 @@ export default function PopUpForm(props) {
                   value={props.data.ebook}
                   onChange={handleChange}
                 />
-                <label for="subjectID">Subject Id:</label>
-                <input
-                  type="text"
-                  id="subjectID"
-                  name="subId"
-                  value={props.data.subID}
-                  onChange={handleChange}
-                />
-              </fieldset>
-              <hr></hr>
-              <fieldset>
-                {/* <legend>
-                  <span class="number">2</span> Some more details
-                </legend>
-                <label for="Tags">Tags:</label>
-                <button className="add-btn" onClick={handleTags}>
-                  +
-                </button>
-                <input
-                  type="text"
-                  id="Tags"
-                  name="Tags"
-                  value={tag}
-                  onChange={handleTagChange}
-                /> */}
+                <label for="subject">Subject Name:</label>
+                <select
+                  id="subject"
+                  name="sub"
+                  onChange={e => handleChange(e)}
+                >
+                  <option value="" selected="selected"> --Please choose an option --</option>
+                  <option value="COA">Computer Organisation and Architecture</option>
+                  <option value="DSA">Data Structures and Algorithm</option>
+                  <option value="DSW">Database Systems and Web</option>
+                  <option value="ES">Electrical Science</option>
+                  <option value="Maths">Mathematics</option>
+                  <option value="OSSP">Operating Systems and Systems Programming</option>
+                  <option value="Phy">Physics</option>
+                  <option value="SDF">Software Development Fundamentals</option>
+                </select>
                 <label for="Price">Price:</label>
                 <span class="rupee-img">&#8377;</span>
                 <input
                   type="number"
                   id="Price"
                   name="Price"
-                  value={ref.price}
+                  value={ref.Price}
                   onChange={handleRef}
                 />
               </fieldset>

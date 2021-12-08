@@ -16,16 +16,15 @@ const DocumentsComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
   
   const def = {
-    'id': "",
-    'author': "",
-    'title': "",
-    'cover': "",
-    'ebook': "",
-    'subId': "",
-    // tags: ["#pdf", "#ebook"],
-    'userPrice': {
-        'price': 0,
-        'user': "",
+    "id": "",
+    "author": "",
+    "title": "",
+    "cover": "",
+    "ebook": "",
+    "sub": "",
+    "UserPrice": {
+        "Price": 0,
+        "user": "",
       },
   };
 
@@ -40,12 +39,13 @@ const DocumentsComponent = () => {
       bookData.cover = "https://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-5-CRC.png";
     }
     const data = {
-      'Author': bookData.author,
-      'Title': bookData.title,
-      'Cover': bookData.cover,
-      'EBook': bookData.ebook,
-      'SubjectID': bookData.subId,
-      'UserPrice': bookData.userPrice,
+      "id": Date.now(),
+      "Author": bookData.author,
+      "Title": bookData.title,
+      "Cover": bookData.cover,
+      "EBook": bookData.ebook,
+      "Subject": bookData.sub,
+      "UserPrice": bookData.userPrice,
     };
     setDoc(doc(ref), data);
     togglePopup();
@@ -56,12 +56,12 @@ const DocumentsComponent = () => {
     getDocs(ref)
       .then((snapshot) => {
         snapshot.forEach((doc) => {
-          // console.log(doc.id, ' ' , doc.data());
-          setDocs(d => {
-            return [...d, {'id': doc.id, 'data': doc.data()}];
+          // console.log(doc.id, ' => ' , doc.data());
+          setDocs((d) => {
+            return [...d, doc.data()];
           })
         });
-    });   
+    });
   }, []);
 
   return (
@@ -74,7 +74,6 @@ const DocumentsComponent = () => {
           addData={addBook}
         />
       )}
-      {/* <h1>Documents</h1> */}
       <CenterBar
         p1={"Reference Books"}
         p2={"Get all the material here"}
@@ -82,17 +81,16 @@ const DocumentsComponent = () => {
       />
       <div className="container-doc">
         {docs.map((doc) => (
-            <BookCard
-              title={doc.data.Title}
-              author={doc.data.Author}
-              rupess="&#x20B9;"
-              originalPrice="550"
-              newPrice="200"
-              alt={doc.id}
-              images={doc.data.Cover}
-              userMail={doc.data.userPrice.user}
-              bookLink={doc.data.EBook}
-            />            
+          <BookCard
+            title={doc.Title}
+            author={doc.Author}
+            rupess="&#x20B9;"
+            images={doc.Cover}
+            bookLink={doc.EBook}
+            originalPrice={doc.UserPrice.Price}
+            newPrice={doc.UserPrice.Price}
+            userMail={doc.UserPrice.user}
+          />
         ))}
       </div>
       <div className="float" onClick={togglePopup}>

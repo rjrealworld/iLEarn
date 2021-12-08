@@ -16,6 +16,7 @@ const TeamComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const def = {
+    id: "",
     name: "",
     link: "",
     user: "",
@@ -28,6 +29,7 @@ const TeamComponent = () => {
 
   const addPost = () => {
     const data = {
+      id: Date.now(),
       name: post.name,
       link: post.link,
       user: currentUser.displayName,
