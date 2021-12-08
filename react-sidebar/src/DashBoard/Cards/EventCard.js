@@ -39,9 +39,10 @@ export default function EventCard(props) {
       </div>
       <div className="lower-container">
         <h3> {props.name} </h3>
-        <p> {props.orgBy} </p>
-        <p> Start: {props.sDate.toDate().toLocaleString()}</p>
-        <p> End: {props.eDate.toDate().toLocaleString()}</p>
+        
+        <p><b>Organised By :</b> {props.orgBy} </p>
+        <p> <b>Start: </b>{props.sDate.toDate().toLocaleString()}</p>
+        <p> <b>End:</b> {props.eDate.toDate().toLocaleString()}</p>
         <p> {props.description} </p>
         <div className="count" onClick={toggle}>
           <img
