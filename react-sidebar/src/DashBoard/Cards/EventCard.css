@@ -27,7 +27,7 @@
 
 .EventCard .lower-container {
     height: 300px;
-    margin-top: 140px;
+    margin-top: 115px;
     background: white;
     text-align: center;
     font-family: 'Titillium Web', sans-serif;
@@ -43,6 +43,7 @@
     font-weight: 600;
     font-size: 1.5rem;
     padding: 12px;
+    height: 60px;
 }
 
 .EventCard .lower-container h4 {
@@ -57,6 +58,7 @@
     color: #2f2d2e;
     font-size: 0.9rem;
     text-align: justify;
+    height: 18px;
 }
 
 .EventCard button {
