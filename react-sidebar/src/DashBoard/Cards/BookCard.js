@@ -1,5 +1,6 @@
 import React from 'react';
 import "./BookCard.css";
+import ButtonMailto from './mailTo';
 
 export default function BookCard(props) {
     let newClassName = `colorBg ${props.alt}`;
@@ -10,7 +11,9 @@ export default function BookCard(props) {
       <div className="BookCard">
         <div className="wrapper">
           <div className={newClassName}></div>
-          <div className="cardImg" style={{ backgroundImage: bgImg }}></div>
+          <a href={props.bookLink} rel="noreferrer" target="_blank">
+            <div className="cardImg" style={{ backgroundImage: bgImg }} />
+          </a>
           <div className="cardInfo">
             <h1>{title}</h1>
             <p className="date">{author}</p>
@@ -26,10 +29,8 @@ export default function BookCard(props) {
                 </p>
               </div>
               <div className="contact">
-                <img
-                  src="https://img.icons8.com/material-outlined/24/000000/mail.png"
-                  alt="contact"
-                />
+                {console.log(props.userMail)}
+                <ButtonMailto mailto={"mailto:"+props.userMail} />
               </div>
             </div>
           </div>

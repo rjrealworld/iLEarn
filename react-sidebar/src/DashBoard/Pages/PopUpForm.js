@@ -12,7 +12,7 @@ export default function PopUpForm(props) {
 
   const handleRef = (e) => {
     setRef({[e.target.name]: e.target.value, 'user': currentUser.email});
-    props.setData((p) => ({...p, 'userPrice': [...p.userPrice, ref]}));
+    props.setData((p) => ({...p, 'userPrice': ref}));
   }
 
   const handleChange = (e) => {

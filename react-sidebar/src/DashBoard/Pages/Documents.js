@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import {Link} from 'react-router-dom';
 import MotionHoc from "./MotionHoc";
 import "./Document.css";
 import Add from "../../assets/Add.svg";
 import db from "../.././firebase";
-import { collection, getDocs, doc, setDoc, addDoc } from "firebase/firestore";
+import { collection, getDocs, doc, setDoc } from "firebase/firestore";
 import BookCard from "../Cards/BookCard";
 import Popup from "./PopUpForm";
 import CenterBar from "./Dashboard/CenterBar";
@@ -17,19 +16,17 @@ const DocumentsComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
   
   const def = {
-    id: "",
-    author: "",
-    title: "",
-    cover: "",
-    ebook: "",
-    subId: "",
-    tags: ["#pdf", "#ebook"],
-    userPrice: [
-      {
-        price: "",
-        user: "",
+    'id': "",
+    'author': "",
+    'title': "",
+    'cover': "",
+    'ebook': "",
+    'subId': "",
+    // tags: ["#pdf", "#ebook"],
+    'userPrice': {
+        'price': 0,
+        'user': "",
       },
-    ],
   };
 
   const [bookData, setBookData] = useState(def);
@@ -48,8 +45,7 @@ const DocumentsComponent = () => {
       'Cover': bookData.cover,
       'EBook': bookData.ebook,
       'SubjectID': bookData.subId,
-      'Tags': bookData.tags,
-      'User-Price': bookData.userPrice,
+      'UserPrice': bookData.userPrice,
     };
     setDoc(doc(ref), data);
     togglePopup();
@@ -65,8 +61,7 @@ const DocumentsComponent = () => {
             return [...d, {'id': doc.id, 'data': doc.data()}];
           })
         });
-    });
-    // console.log(docs);    
+    });   
   }, []);
 
   return (
@@ -87,7 +82,6 @@ const DocumentsComponent = () => {
       />
       <div className="container-doc">
         {docs.map((doc) => (
-          <a href={doc.data.EBook} rel="noreferrer" target="_blank">
             <BookCard
               title={doc.data.Title}
               author={doc.data.Author}
@@ -96,8 +90,9 @@ const DocumentsComponent = () => {
               newPrice="200"
               alt={doc.id}
               images={doc.data.Cover}
-            />
-          </a>
+              userMail={doc.data.userPrice.user}
+              bookLink={doc.data.EBook}
+            />            
         ))}
       </div>
       <div className="float" onClick={togglePopup}>

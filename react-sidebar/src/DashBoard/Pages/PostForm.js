@@ -4,8 +4,13 @@ import "./form.css"
 export default function PostForm(props) {
 
     const handleChange = (e) => {
-      props.setData((p) => ({ ...p, [e.target.name]: e.target.value }));
+      props.setPost((p) => ({ ...p, [e.target.name]: e.target.value }));
     };
+
+    const functionCall = (e) => {
+      e.preventDefault();
+      props.addPost(props.data);
+    }
 
     return (
       <div className="popup-box">
@@ -29,57 +34,33 @@ export default function PostForm(props) {
                     value={props.data.name}
                     onChange={handleChange}
                   />
-                  <label for="org">Project Link:</label>
+                  <label for="link">Project Link:</label>
                   <input
                     type="text"
-                    id="org"
-                    name="orgBy"
-                    value={props.data.orgBy}
+                    id="link"
+                    name="link"
+                    value={props.data.link}
                     onChange={handleChange}
                   />
-                  <label for="poster">Poster:</label>
+                  <label for="ss">Screenshot:</label>
                   <input
                     type="text"
-                    id="poster"
-                    name="poster"
-                    value={props.data.poster}
-                    onChange={handleChange}
-                  />
-                  <label for="stDate">Start:</label>
-                  <input
-                    type="date"
-                    id="stDate"
-                    name="start"
-                    value={props.data.start}
-                    onChange={handleChange}
-                  />
-                  <label for="endDate">End:</label>
-                  <input
-                    type="date"
-                    id="endDate"
-                    name="end"
-                    value={props.data.end}
-                    onChange={handleChange}
-                  />
-                  <label for="venue">Venue:</label>
-                  <input
-                    type="text"
-                    id="venue"
-                    name="venue"
-                    value={props.data.venue}
+                    id="ss"
+                    name="sshot"
+                    value={props.data.sshot}
                     onChange={handleChange}
                   />
                   <label for="desc">Description:</label>
                   <textarea
                     id="desc"
-                    name="description"
-                    value={props.data.description}
+                    name="desc"
+                    value={props.data.desc}
                     onChange={handleChange}
                   />
                 </fieldset>
                 <button 
                     type="submit"  
-                    // onClick={functionCall}
+                    onClick={functionCall}
                     class="add-book">
                   Add Book
                 </button>
