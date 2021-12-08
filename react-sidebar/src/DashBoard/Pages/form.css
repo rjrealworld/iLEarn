@@ -67,7 +67,7 @@ body {
 .PopupForm input[type="text"],
 .PopupForm input[type="password"],
 .PopupForm input[type="date"],
-.PopupForm input[type="datetime"],
+.PopupForm input[type="datetime-local"],
 .PopupForm input[type="email"],
 .PopupForm input[type="number"],
 .PopupForm input[type="search"],

@@ -48,7 +48,7 @@ export default function EventForm(props) {
                 />
                 <label for="stDate">Start:</label>
                 <input
-                  type="date"
+                  type="datetime-local"
                   id="stDate"
                   name="start"
                   value={props.data.start}
@@ -56,7 +56,7 @@ export default function EventForm(props) {
                 />
                 <label for="endDate">End:</label>
                 <input
-                  type="date"
+                  type="datetime-local"
                   id="endDate"
                   name="end"
                   value={props.data.end}
