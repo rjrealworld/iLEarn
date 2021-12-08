@@ -79,6 +79,23 @@ const DocumentsComponent = () => {
         p2={"Get all the material here"}
         image={documents}
       />
+      <fieldset className="filter-search">
+      <label for="subject" className="search">Search by subject Name:</label>
+                <select
+                  id="subject"
+                  name="sub"
+                >
+                  <option value="" selected="selected"> -- Please choose a subject --</option>
+                  <option value="COA">Computer Organisation and Architecture</option>
+                  <option value="DSA">Data Structures and Algorithm</option>
+                  <option value="DSW">Database Systems and Web</option>
+                  <option value="ES">Electrical Science</option>
+                  <option value="Maths">Mathematics</option>
+                  <option value="OSSP">Operating Systems and Systems Programming</option>
+                  <option value="Phy">Physics</option>
+                  <option value="SDF">Software Development Fundamentals</option>
+                </select>
+                </fieldset>
       <div className="container-doc">
         {docs.map((doc) => (
           <BookCard
