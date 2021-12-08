@@ -93,7 +93,7 @@ const TeamComponent = () => {
             <Post
               key={p.id}
               username={p.name}
-              userImg="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhVzfQ0dNV81i_D80HcVsJg-QUF4YGb0oqig&usqp=CAU"
+              userImg="https://img.icons8.com/color/48/000000/circled-user-male-skin-type-7--v2.png"
               timestamp={p.time.toDate().toString()}
               desc={p.desc}
               img={p.sshot}

@@ -36,9 +36,6 @@ export default function PopUpForm(props) {
             <form className="PopupForm">
               <h1> Upload Book </h1>
               <fieldset>
-                {/* <legend>
-                  <span class="number">1</span> Basic Info
-                </legend> */}
                 <label for="Title">Book Name:</label>
                 <input
                   type="text"
