@@ -58,6 +58,7 @@ const SidebarContainer = styled.div`
   margin-top: 1rem;
   border-radius: 0 30px 30px 0;
   padding: 1rem 0;
+  z-index: 1000;
 
   display: flex;
   flex-direction: column;
