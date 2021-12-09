@@ -35,10 +35,6 @@
     padding: 15px 25px;
 }
 
-.post_image > img {
-    width: 100%;
-}
-
 .post_options {
     padding-top: 10px;
     border-top: 1px solid lightgray;
@@ -68,6 +64,13 @@
 }
 
 .post_image img {
-    display: block;
-    border-radius: 0 0 15px 15px;
+    /* border-radius: 0 0 15px 15px; */
+    height: 50vh;
+    width: auto;
+}
+
+.post_image {
+    display: flex;
+    justify-content: center;
+    background-color: #bbb;
 }
