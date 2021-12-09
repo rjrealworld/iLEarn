@@ -38,7 +38,7 @@ const CalenderComponent = () => {
       eventData.poster = "https://www.pngrepo.com/png/190685/512/calendar.png";
     }
     const data = {
-      id: eventData.id,
+      id: Date.now(),
       Name: eventData.name,
       OrganisedBy: eventData.orgBy,
       Poster: eventData.poster,
