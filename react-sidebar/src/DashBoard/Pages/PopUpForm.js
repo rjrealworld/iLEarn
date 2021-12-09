@@ -3,15 +3,12 @@ import "./form.css";
 import { useAuth } from "../../contexts/AuthContext";
 
 export default function PopUpForm(props) {
-  const [ref, setRef] = useState({
-    Price: 0,
-    user: "",
-  });
+  const [ref, setRef] = useState(props.data.UserPrice);
 
   const { currentUser } = useAuth();
 
   const handleRef = (e) => {
-    setRef({[e.target.name]: e.target.value, 'user': currentUser.email});
+    setRef({...ref, [e.target.name]: e.target.value, 'user': currentUser.email});
     props.setData((p) => ({...p, 'UserPrice': ref}));
   }
 
@@ -97,7 +94,7 @@ export default function PopUpForm(props) {
                   type="number"
                   id="lPrice"
                   name="listPrice"
-                  value={ref.listPrice}
+                  value={props.data.listPrice}
                   onChange={handleRef}
                 />
                 <label for="sPrice">Selling Price:</label>
@@ -106,7 +103,7 @@ export default function PopUpForm(props) {
                   type="number"
                   id="sPrice"
                   name="sellPrice"
-                  value={ref.sellPrice}
+                  value={props.data.sellPrice}
                   onChange={handleRef}
                 />
               </fieldset>

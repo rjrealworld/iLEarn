@@ -16,8 +16,8 @@ const Home = () => {
     <div>
       <CenterBar p1={'Hey ' + name} p2={"Let's start the learning"} image={dashBoard}/>
       {/* <ProgressBar /> */}
-      {/* <UserCard /> */}
-      <Profile />
+      <UserCard />
+      {/* <Profile /> */}
     </div>
   );
 };
