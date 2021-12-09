@@ -31,7 +31,7 @@
     bottom: 0;
     overflow: hidden;
   }
-  span.photo{
+  .profile span.photo{
     position: relative;
     height: 80px;
     width: 80px;
@@ -46,7 +46,7 @@
     border-radius: 100%;
     border: 2px solid #09090c;
   }
-  span.photo:after{
+  .profile span.photo:after{
     content: " Add";
     position: absolute;
     left: 0;
@@ -63,15 +63,15 @@
     border-radius: 100%;
     text-align: center;
   }
-  label{
+  .profile label{
     color: #555;
     line-height: 2.1em;
     margin-left: 10px;
   }
-  label[for="avatar"]{
+  .profile label[for="avatar"]{
     line-height: 120px;
   }
-  .btn{
+  .profile .btn{
     top: 45%;
     left: 25%;
     background-color: #09090c;
@@ -83,7 +83,7 @@
   
   /*Input Fields Styles
   =========================*/
-  .field textarea,input{
+  .profile .field textarea,input{
     font-family: Open Sans;
     font-size: 15px;
     color: #333;
@@ -96,18 +96,6 @@
     border-radius: 2.5px;
     outline: 0;
     transition: 0.3s ease;
-  }
-  fieldset textarea{
-    min-height: 40px;
-    max-height: 60px;
-  }
-  fieldset textarea:hover,input:hover{
-    box-shadow: 0 0 0 1px #09090c;
-    background-color: #fff;
-  }
-  fieldset textarea:focus,input:focus{
-    box-shadow: 0 0 0 1px #09090c,
-                inset 0 2px 5px -1px rgba(0,0,0,0.25);
   }
   .grid-35{
     width: 35%;
@@ -143,7 +131,7 @@
     font-weight: 200;
     margin: 5px auto 15px auto;
   }
-  select{
+  .profile select{
     width: 90%;
     padding: 7px 10px;
     background-color: #f5f5f5;
@@ -151,21 +139,10 @@
     border-radius: 2.5px;
     outline: 0;
   }
-  select option{
+  .profile select option{
     padding: 5px;
   }
-  fieldset{
-    text-align: center;
-    /* background-color: rgba(0,0,0,0.01); */
-    margin-bottom: 5px;
-    padding: 5px;
-    box-sizing: border-box;
-    border-bottom: 1px solid rgba(0,0,0,0.07);
-  }
-  fieldset:last-child{
-    border-bottom: none;
-  }
-  input.Btn{
+  .profile input.Btn{
     width: 48%;
     float: left;
     display: block;
