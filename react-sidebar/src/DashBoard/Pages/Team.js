@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import CenterBar from "./Dashboard/CenterBar";
-import teams from "../../assets/community.svg";
 import Add from "../../assets/Add.svg";
 import PostForm from "./PostForm";
 import MotionHoc from "./MotionHoc";

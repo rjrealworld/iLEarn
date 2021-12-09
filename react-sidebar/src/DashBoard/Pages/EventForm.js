@@ -79,7 +79,7 @@ export default function EventForm(props) {
                 />
               </fieldset>
               <button type="submit" onClick={functionCall} class="add-book">
-                Add Book
+                Add Event
               </button>
             </form>
           </div>

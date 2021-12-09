@@ -5,7 +5,7 @@ import logo from "../../assets/logo.svg";
 import Grid from "../../assets/grid.svg";
 import TeamImg from "../../assets/social.svg";
 import Calender from "../../assets/sceduled.svg";
-import Chat from "../../assets/message-circle.svg";
+import Forum from "../../assets/Forum.svg";
 import Documents from "../../assets/draft.svg";
 import PowerOff from "../../assets/power-off-solid.svg";
 
@@ -64,14 +64,14 @@ const Sidebar = () => {
             <img src={Documents} alt="Books" />
             <Text clicked={click}>Resources</Text>
           </Item>
-          {/*<Item
+          <Item
             onClick={() => setClick(false)}
             activeClassName="active"
             to="/dashboard/projects"
           >
-            <img src={Chat} alt="Chat" />
-            <Text clicked={click}>Chat</Text>
-          </Item>*/}
+            <img src={Forum} alt="Forum" />
+            <Text clicked={click}>Doubts</Text>
+          </Item>
         </SlickBar>
 
         <Profile clicked={profileClick}>

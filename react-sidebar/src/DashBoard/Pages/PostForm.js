@@ -59,7 +59,7 @@ export default function PostForm(props) {
                     type="submit"  
                     onClick={functionCall}
                     class="add-book">
-                  Add
+                  Add Project
                 </button>
               </form>
             </div>
