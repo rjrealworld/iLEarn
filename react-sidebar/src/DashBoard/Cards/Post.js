@@ -10,11 +10,13 @@ function Post(props) {
                     <h3>{ props.username }</h3>
                     <p>{ props.timestamp }</p>
                 </div>
+                <button className="view-project">View</button>
             </div>
 
             <div className="post_bottom">
                 <p>{ props.desc }</p>
             </div>
+            
             
             <div className="post_image">
                 <img src={props.img} alt="img" />
