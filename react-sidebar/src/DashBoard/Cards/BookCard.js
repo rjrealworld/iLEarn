@@ -30,9 +30,9 @@ export default function BookCard(props) {
         <div className="wrapper">
           {/* <div className={newClassName}></div> */}
           <a
-            href={props.originalPrice != 0 ? "#" : props.bookLink}
+            href={props.newPrice != 0 ? "#" : props.bookLink}
             rel="noreferrer"
-            target={props.originalPrice === 0 && "_blank"}
+            target={props.newPrice === 0 && "_blank"}
           >
             <div className="cardImg" style={{ backgroundImage: bgImg }} />
           </a>

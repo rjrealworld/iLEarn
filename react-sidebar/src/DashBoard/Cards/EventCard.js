@@ -12,22 +12,20 @@ export default function EventCard(props) {
     "https://img.icons8.com/material-sharp/24/000000/person-male.png";
 
   const [img, setImg] = useState(unlikedImg);
+  const [likes, setLikes] = useState(props.count);
 
-  const toggle = () => {
-    var val = props.count;
-    
+  const toggle = () => {    
     setImg(p => {
       if(p === unlikedImg) {
-        val = val + 1;
+        setLikes(props.count + 1);
         return likedImg;
       }
-      val = val - 1;
+      setLikes(props.count);
       return unlikedImg;
-    })
-
-    updateDoc(ref, {
-      count: val,
     });
+    // updateDoc(ref, {
+    //   LikeCount: likes
+    // });
   }
 
   return (
@@ -49,7 +47,7 @@ export default function EventCard(props) {
             src={img}
             className="attendees"
           />
-          <p className="att-count">{props.count}</p>
+          <p className="att-count">{likes}</p>
         </div>
         <button>RSVP</button>
       </div>
