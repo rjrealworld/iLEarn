@@ -53,7 +53,7 @@ const DocumentsComponent = () => {
       Cover: bookData.cover,
       EBook: bookData.ebook,
       Subject: bookData.sub,
-      UserPrice: bookData.userPrice,
+      UserPrice: bookData.UserPrice,
     };
     setDoc(doc(ref), data);
     togglePopup();

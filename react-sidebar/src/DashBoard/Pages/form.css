@@ -169,11 +169,10 @@ body {
   display: inline-block;
   /* background-image: url("rupee.png"); */
 }
-
-.PopupForm #Tags {
+/* .PopupForm #Tags {
   padding-left: 40px;
-}
-.PopupForm #Price {
+} */
+.PopupForm #lPrice, .PopupForm #sPrice {
   padding-left: 40px;
 }
 
