@@ -11,7 +11,7 @@ function Query(props) {
           <p>{props.timestamp}</p>
         </div>
         <a href={"mailto:"+props.email+"?subject=Solution: "+props.desc} rel="noreferrer" target="_blank">
-          <button className="view-project">Solve</button>
+          <button className="view-project">Answer</button>
         </a>
       </div>
 
