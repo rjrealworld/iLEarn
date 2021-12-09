@@ -14,11 +14,13 @@ html {
 	display: grid;
 	grid-gap: 50px 50px;
 	grid-template-columns: auto auto auto;
-	margin-top:40%;
 }
-
 .container-doc a {
 	text-decoration: none;
+}
+
+.sub-container {
+	margin-top:85%;
 }
 
 .float{

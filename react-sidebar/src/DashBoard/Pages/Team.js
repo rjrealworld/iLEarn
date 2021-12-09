@@ -92,11 +92,12 @@ const TeamComponent = () => {
           return (
             <Post
               key={p.id}
-              username={p.name}
-              userImg="https://img.icons8.com/color/48/000000/circled-user-male-skin-type-7--v2.png"
-              timestamp={p.time.toDate().toString()}
+              username={p.user}
+              userImg={p.dispImg}
+              timestamp={p.time.toDate().toLocaleString()}
               desc={p.desc}
               img={p.sshot}
+              link={p.link}
             />
           );
         })}

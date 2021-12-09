@@ -81,4 +81,6 @@
     padding: 5px;
     cursor: pointer;
     position: absolute;
+    right: 50px;
+    transform: scale(1.3);
 }

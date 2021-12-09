@@ -17,22 +17,22 @@ const DocumentsComponent = () => {
 
   const handleChange = (e) => {
     setCurrSub(e.target.value);
-  }
+  };
 
   const [isOpen, setIsOpen] = useState(false);
-  
+
   const def = {
-    "id": "",
-    "author": "",
-    "title": "",
-    "cover": "",
-    "ebook": "",
-    "sub": "",
-    "UserPrice": {
-        "listPrice": 0,
-        "sellPrice": 0,
-        "user": "",
-      },
+    id: "",
+    author: "",
+    title: "",
+    cover: "",
+    ebook: "",
+    sub: "",
+    UserPrice: {
+      listPrice: 0,
+      sellPrice: 0,
+      user: "",
+    },
   };
 
   const [bookData, setBookData] = useState(def);
@@ -42,34 +42,32 @@ const DocumentsComponent = () => {
   };
 
   const addBook = () => {
-    if(bookData.cover === "") {
-      bookData.cover = "https://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-5-CRC.png";
+    if (bookData.cover === "") {
+      bookData.cover =
+        "https://trello.com/1/cards/61b1911e190914796fae32c3/attachments/61b1911e190914796fae32cf/previews/61b1911f190914796fae32d5/download/COVER_FOR_THE_STUDY_MATERIAL.png";
     }
     const data = {
-      "id": Date.now(),
-      "Author": bookData.author,
-      "Title": bookData.title,
-      "Cover": bookData.cover,
-      "EBook": bookData.ebook,
-      "Subject": bookData.sub,
-      "UserPrice": bookData.userPrice,
+      id: Date.now(),
+      Author: bookData.author,
+      Title: bookData.title,
+      Cover: bookData.cover,
+      EBook: bookData.ebook,
+      Subject: bookData.sub,
+      UserPrice: bookData.userPrice,
     };
     setDoc(doc(ref), data);
     togglePopup();
     setBookData(def);
-  }
-
-  
+  };
 
   useEffect(() => {
-    getDocs(ref)
-      .then((snapshot) => {
-        snapshot.forEach((doc) => {
-          // console.log(doc.id, ' => ' , doc.data());
-          setDocs((d) => {
-            return [...d, doc.data()];
-          })
+    getDocs(ref).then((snapshot) => {
+      snapshot.forEach((doc) => {
+        // console.log(doc.id, ' => ' , doc.data());
+        setDocs((d) => {
+          return [...d, doc.data()];
         });
+      });
     });
   }, []);
 
@@ -119,32 +117,36 @@ const DocumentsComponent = () => {
       <div className="container-doc">
         {currSub === "All"
           ? docs.map((doc) => (
-              <BookCard
-                key={doc.id}
-                title={doc.Title}
-                author={doc.Author}
-                rupess="&#x20B9;"
-                images={doc.Cover}
-                bookLink={doc.EBook}
-                originalPrice={doc.UserPrice.listPrice}
-                newPrice={doc.UserPrice.sellPrice}
-                userMail={doc.UserPrice.user}
-              />
+              <div className="sub-container">
+                <BookCard
+                  key={doc.id}
+                  title={doc.Title}
+                  author={doc.Author}
+                  rupess="&#x20B9;"
+                  images={doc.Cover}
+                  bookLink={doc.EBook}
+                  originalPrice={doc.UserPrice.listPrice}
+                  newPrice={doc.UserPrice.sellPrice}
+                  userMail={doc.UserPrice.user}
+                />
+              </div>
             ))
           : docs.map(
               (doc) =>
                 doc.Subject === currSub && (
-                  <BookCard
-                    key={doc.id}
-                    title={doc.Title}
-                    author={doc.Author}
-                    rupess="&#x20B9;"
-                    images={doc.Cover}
-                    bookLink={doc.EBook}
-                    originalPrice={doc.UserPrice.listPrice}
-                    newPrice={doc.UserPrice.sellPrice}
-                    userMail={doc.UserPrice.user}
-                  />
+                  <div className="sub-container">
+                    <BookCard
+                      key={doc.id}
+                      title={doc.Title}
+                      author={doc.Author}
+                      rupess="&#x20B9;"
+                      images={doc.Cover}
+                      bookLink={doc.EBook}
+                      originalPrice={doc.UserPrice.listPrice}
+                      newPrice={doc.UserPrice.sellPrice}
+                      userMail={doc.UserPrice.user}
+                    />
+                  </div>
                 )
             )}
       </div>
@@ -153,8 +155,7 @@ const DocumentsComponent = () => {
       </div>
     </div>
   );
-}
-
+};
 
 const Documents = MotionHoc(DocumentsComponent);
 

@@ -1,12 +1,13 @@
 import React from "react";
 import "./Profile.css";
+
+
 const Profile = () => {
   return (
     <div class="profile">
       <div class="content">
         <h1>Edit Profile</h1>
         <form action="">
-          <fieldset>
             <div class="grid-35">
               <label for="avatar">Your Photo</label>
             </div>
@@ -14,16 +15,14 @@ const Profile = () => {
               <span class="photo" title="Upload your Avatar!"></span>
               <input type="file" class="btn" />
             </div>
-          </fieldset>
-          <fieldset>
+                   
             <div class="grid-35">
               <label for="name">Name</label>
             </div>
             <div class="grid-65">
               <input type="text" id="name" tabindex="2" />
             </div>
-          </fieldset>
-          <fieldset>
+          
             <div class="grid-35">
               <label for="description">About you</label>
             </div>
@@ -36,16 +35,14 @@ const Profile = () => {
                 tabindex="3"
               ></textarea>
             </div>
-          </fieldset>
-          <fieldset>
+          
             <div class="grid-35">
               <label for="email">Email Address</label>
             </div>
             <div class="grid-65">
               <input type="email" id="email" tabindex="6" />
             </div>
-          </fieldset>
-          <fieldset>
+          
             <div class="grid-35">
               <label for="phone">Phone Number</label>
             </div>
@@ -58,8 +55,7 @@ const Profile = () => {
                 pattern="[1-9]{1}[0-9]{9}"
               />
             </div>
-          </fieldset>
-          <fieldset>
+          
             <div class="grid-35">
               <label for="qualification">Year</label>
             </div>
@@ -75,27 +71,24 @@ const Profile = () => {
                 <option value="fifth-year">5th year</option>
               </select>
             </div>
-          </fieldset>
-          <fieldset>
+          
             <div class="grid-35">
               <label for="linkedin">LinkedIn URL</label>
             </div>
             <div class="grid-65">
               <input type="text" id="linkedin" tabindex="12" />
             </div>
-          </fieldset>
-          <fieldset>
+          
             <div class="grid-35">
               <label for="github">Github URL</label>
             </div>
             <div class="grid-65">
               <input type="text" id="github" tabindex="13" />
             </div>
-          </fieldset>
-          <fieldset>
+          
             <input type="button" class="Btn cancel" value="Cancel" />
             <input type="submit" class="Btn" value="Save Changes" />
-          </fieldset>
+          
         </form>
       </div>
     </div>
