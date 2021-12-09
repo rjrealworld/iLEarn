@@ -21,7 +21,7 @@ export default function PostForm(props) {
           <div class="row">
             <div class="col-md-12">
               <form className="PopupForm">
-                <h1> Add doubt </h1>
+                <h1> Add project </h1>
                 <fieldset>
                   <label for="proj">Project Name:</label>
                   <input
@@ -59,7 +59,7 @@ export default function PostForm(props) {
                     type="submit"  
                     onClick={functionCall}
                     class="add-book">
-                  Add Book
+                  Add
                 </button>
               </form>
             </div>
