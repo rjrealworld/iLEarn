@@ -49,7 +49,6 @@ export default function EventCard(props) {
           />
           <p className="att-count">{likes}</p>
         </div>
-        <button>RSVP</button>
       </div>
     </div>
   );
