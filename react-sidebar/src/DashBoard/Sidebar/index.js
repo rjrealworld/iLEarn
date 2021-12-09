@@ -64,14 +64,14 @@ const Sidebar = () => {
             <img src={Documents} alt="Books" />
             <Text clicked={click}>Resources</Text>
           </Item>
-          <Item
+          {/*<Item
             onClick={() => setClick(false)}
             activeClassName="active"
             to="/dashboard/projects"
           >
             <img src={Chat} alt="Chat" />
             <Text clicked={click}>Chat</Text>
-          </Item>
+          </Item>*/}
         </SlickBar>
 
         <Profile clicked={profileClick}>
